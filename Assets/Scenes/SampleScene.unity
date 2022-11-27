@@ -1098,6 +1098,7 @@ Transform:
   m_PrefabInstance: {fileID: 1131755737}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &863258924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1160,11 +1161,16 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c41bf63638a124c8784062b06ac06b, type: 3}
 =======
+=======
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
 --- !u!4 &1075100062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2137792197263449323, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
   m_PrefabInstance: {fileID: 54928939}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
+=======
 >>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
 --- !u!1001 &1091191868
 PrefabInstance:
@@ -1618,8 +1624,12 @@ GameObject:
   - component: {fileID: 1975719981}
   - component: {fileID: 1975719982}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1975719983}
   m_Layer: 3
+=======
+  m_Layer: 2
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
 =======
   m_Layer: 2
 >>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
@@ -1710,7 +1720,11 @@ Transform:
   m_GameObject: {fileID: 1975719973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 2.18, y: 2.63, z: 0}
+=======
+  m_LocalPosition: {x: 1.95, y: 1.25, z: 0}
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
 =======
   m_LocalPosition: {x: 1.95, y: 1.25, z: 0}
 >>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
@@ -1824,6 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!61 &1975719983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1851,6 +1866,8 @@ BoxCollider2D:
   m_Size: {x: 0.5, y: 0.46}
   m_EdgeRadius: 0
 =======
+=======
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
   maxRadius: 0.3
   overlaps:
   - {fileID: 0}
@@ -1909,6 +1926,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8364526279978340846, guid: f6bb9c1894770cd4b8510fe758d2bef5, type: 3}
   m_PrefabInstance: {fileID: 1777401468}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
+=======
 >>>>>>> parent of 09504d7 (skrypt na warsty spritow dziala)
 --- !u!1001 &2101001499
 PrefabInstance:
