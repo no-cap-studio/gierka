@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711440570}
     m_Modifications:
+    - target: {fileID: 1057399327573084780, guid: f6bb9c1894770cd4b8510fe758d2bef5, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8364526279978340840, guid: f6bb9c1894770cd4b8510fe758d2bef5, type: 3}
       propertyPath: m_Name
       value: smietnik
@@ -231,9 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a96e05f1b341b74596d49770618b32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.1
   transgracza: {fileID: 1975719976}
-  maxRadius: 1.23
+  maxRadius: 1.84
   maxAngle: 44
   overlaps:
   - {fileID: 0}
@@ -800,6 +804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: menelowina
       objectReference: {fileID: 0}
+    - target: {fileID: 8646121457499749210, guid: 62c41bf63638a124c8784062b06ac06b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c41bf63638a124c8784062b06ac06b, type: 3}
 --- !u!1001 &1091191868
@@ -860,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 2137792197263449323, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646762625619931028, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
@@ -925,6 +937,18 @@ PrefabInstance:
     - target: {fileID: 371800721955806554, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265907040850411043, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265907042010561776, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265907042010561782, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
@@ -1010,6 +1034,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711440570}
     m_Modifications:
+    - target: {fileID: 1057399327573084780, guid: f6bb9c1894770cd4b8510fe758d2bef5, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8364526279978340840, guid: f6bb9c1894770cd4b8510fe758d2bef5, type: 3}
       propertyPath: m_Name
       value: smietnik (1)
@@ -1091,6 +1119,7 @@ GameObject:
   - component: {fileID: 1975719980}
   - component: {fileID: 1975719981}
   - component: {fileID: 1975719982}
+  - component: {fileID: 1975719983}
   m_Layer: 3
   m_Name: jasper pixel front 1
   m_TagString: Player
@@ -1178,7 +1207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975719973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.94, y: 1.39, z: 0}
+  m_LocalPosition: {x: 2.18, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1239,7 +1268,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0046111345, y: -0.009777218}
@@ -1264,7 +1293,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975719973}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1288,6 +1317,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1a54c0be4e3d0488e8ae7ec29bfa36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1975719983
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975719973}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.25}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 1}
+    newSize: {x: 0.5, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.46}
+  m_EdgeRadius: 0
 --- !u!1001 &2101001499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1351,6 +1406,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7265907040850411043, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4917d7f2ae1d2a04b90f896add3997af, type: 3}
 --- !u!1001 &2123353111
@@ -1411,6 +1470,10 @@ PrefabInstance:
     - target: {fileID: 2137792197263449323, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646762625619931028, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26582d47fd81b034d91156814efdc4bc, type: 3}
