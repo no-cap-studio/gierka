@@ -8,13 +8,32 @@ using static UnityEngine.GraphicsBuffer;
 
 public class orderControl : MonoBehaviour
 {
-    public float maxRadius;
-    public Collider2D[] overlaps = new Collider2D[50];
+    public int startOrder;
+    public SpriteRenderer[] sprity;
     public GameObject player;
-    public Vector3 spriteSize;
+    public float[] transformsy;
+    public float heightDifferent;
     void Start()
     {
-        
+       // startOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        sprity = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        transformsy = new float[sprity.Length];
+        for(int i=0; i < sprity.Length; i++)
+        {
+            if (sprity[i].transform.position.y>0)
+            {
+                transformsy[i] = sprity[i].transform.position.y - sprity[i].bounds.size.y / 2;
+                sprity[i].sortingOrder = 1000 - Mathf.Abs((int)(100 * transformsy[i]));
+                Debug.Log(sprity[i].bounds.size.y);
+            }
+            else
+            {
+                transformsy[i] = sprity[i].transform.position.y - sprity[i].bounds.size.y / 2;
+                sprity[i].sortingOrder = 1000 + Mathf.Abs((int)(100 * transformsy[i]));
+                Debug.Log(sprity[i].bounds.size.y);
+            }
+            
+        }
     }
 
     
@@ -25,24 +44,62 @@ public class orderControl : MonoBehaviour
 
     public void check()
     {
-        int count = Physics2D.OverlapCircleNonAlloc(transform.position, maxRadius, overlaps);
-        for(int i =0; i<overlaps.Length - 1; i++)
+        if(player.transform.position.y>0)
         {
-            spriteSize = new Vector3(overlaps[i].GetComponent<SpriteRenderer>().bounds.size.x, overlaps[i].GetComponent<SpriteRenderer>().bounds.size.y, 0.1);
-            if (overlaps[i] != null)
+            player.GetComponent<SpriteRenderer>().sortingOrder = 1000 - Mathf.Abs((int)(100 * player.transform.position.y) + (int)player.GetComponent<SpriteRenderer>().bounds.size.y / 2) ;
+        }
+        else
+        {
+            player.GetComponent<SpriteRenderer>().sortingOrder = 1000 + Mathf.Abs((int)(100 * player.transform.position.y) + (int)player.GetComponent<SpriteRenderer>().bounds.size.y / 2);
+        }
+        
+    }
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            if (collision.gameObject.layer == 3)
             {
-                if (overlaps[i].transform.position.y + overlaps[i].GetComponent<BoxCollider2D>().offset.y > transform.position.y + gameObject.GetComponent<BoxCollider2D>().offset.y )
+                if (collision.transform.position.y > transform.position.y - heightDifferent)
                 {
-                    player.GetComponent<SpriteRenderer>().sortingOrder = overlaps[i].GetComponent<SpriteRenderer>().sortingOrder + 1;
+                    gameObject.GetComponent<SpriteRenderer>().sortingOrder = collision.GetComponentInParent<SpriteRenderer>().sortingOrder + 1;
+                    Debug.Log("cipa");
                 }
                 else
                 {
-                    player.GetComponent<SpriteRenderer>().sortingOrder = overlaps[i].GetComponent<SpriteRenderer>().sortingOrder - 1;
+                    gameObject.GetComponent<SpriteRenderer>().sortingOrder = collision.GetComponentInParent<SpriteRenderer>().sortingOrder - 1;
+                    Debug.Log("cipa2");
                 }
+
             }
-            
+
         }
-            
-        
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(gameObject.layer == 6)
+        {
+            heightDifferent = 0;
+        }
+        else
+        {
+            heightDifferent= GetComponent<SpriteRenderer>().bounds.size.y / 2;
+        }
+        if (collision.gameObject.layer == 3)
+        {
+            if (collision.transform.position.y > transform.position.y - heightDifferent) 
+            {
+                gameObject.GetComponent<SpriteRenderer>().sortingOrder = collision.GetComponentInParent<SpriteRenderer>().sortingOrder  +1;
+                Debug.Log("cipa");
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().sortingOrder = collision.GetComponentInParent<SpriteRenderer>().sortingOrder - 1;
+                Debug.Log("cipa2");
+            }
+
+        }
+    }
+  */
 }
