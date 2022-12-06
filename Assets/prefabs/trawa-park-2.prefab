@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5392756221221971348}
   - component: {fileID: 577749138059405151}
   - component: {fileID: 5918687417111573261}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: trawa-park-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

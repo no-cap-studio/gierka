@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6421333954060004432}
   - component: {fileID: 6421333954060004433}
   - component: {fileID: 6421333954060004434}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: trawa 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
