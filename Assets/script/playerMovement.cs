@@ -13,6 +13,8 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
+    public int punkty=0;
+    public bool wygrana;
     void Start()
     {
         obrazek = GameObject.FindWithTag("wygrama");
@@ -22,7 +24,7 @@ public class playerMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Tekst.text = punkty.ToString();
@@ -51,8 +53,7 @@ public class playerMovement : MonoBehaviour
 
         
     }
-<<<<<<< Updated upstream
-=======
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
@@ -72,5 +73,5 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
->>>>>>> Stashed changes
+
 }
