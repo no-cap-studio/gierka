@@ -8,9 +8,6 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
-    public int punkty = 0;
-    public bool wygrana = false;
-    
     void Start()
     {
         
@@ -43,22 +40,5 @@ public class playerMovement : MonoBehaviour
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,0);
 
         
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-        if (collision.gameObject.tag == "Banan")
-        {
-            
-            Destroy(collision.gameObject);
-            punkty += 1;
-            
-            if (punkty == 5)
-            {
-                
-                wygrana = true;
-                Debug.Log("Yems");
-            }
-        }
     }
 }
