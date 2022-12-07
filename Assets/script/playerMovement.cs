@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
+    GameObject obrazek;
+    Image obraz;
     GameObject tekscik;
     TextMeshProUGUI Tekst;
     public GameObject player;
@@ -13,8 +15,11 @@ public class playerMovement : MonoBehaviour
     public float inputX, inputY;
     void Start()
     {
-        tekscik = GameObject.FindWithTag("text");
+        obrazek = GameObject.FindWithTag("wygrama");
+        obraz = obrazek.GetComponent<Image>();
+        tekscik = GameObject.FindWithTag("tekst");
         Tekst = tekscik.GetComponent<TextMeshProUGUI>();
+        
     }
 
     // Update is called once per frame
@@ -46,4 +51,26 @@ public class playerMovement : MonoBehaviour
 
         
     }
+<<<<<<< Updated upstream
+=======
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Banan")
+        {
+            
+            Destroy(collision.gameObject);
+            punkty += 1;
+            
+            if (punkty == 5)
+            {
+                
+                wygrana = true;
+                Debug.Log("Yems");
+                obraz.enabled = true;
+                Time.timeScale = 0;
+            }
+        }
+    }
+>>>>>>> Stashed changes
 }

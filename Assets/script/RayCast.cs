@@ -4,9 +4,12 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RayCast : MonoBehaviour
 {
+    GameObject obrazek;
+    Image obraz;
     public float speed;
     float step;
     Vector2 pozgracza;
@@ -28,8 +31,9 @@ public class RayCast : MonoBehaviour
     void Start()
     {
         step = speed * Time.deltaTime;
+        obrazek = GameObject.FindWithTag("smierc");
+        obraz = obrazek.GetComponent<Image>();
 
-        
 
     }
 
@@ -114,6 +118,7 @@ public class RayCast : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Time.timeScale = 0;
+            obraz.enabled = true;
         }
     }
 }
