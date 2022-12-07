@@ -109,7 +109,13 @@ public class RayCast : MonoBehaviour
         }
         return false;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Time.timeScale = 0;
+        }
+    }
 }
 
 

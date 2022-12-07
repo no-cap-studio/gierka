@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
+    GameObject tekscik;
+    TextMeshProUGUI Tekst;
     public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
@@ -13,12 +16,14 @@ public class playerMovement : MonoBehaviour
     
     void Start()
     {
-        
+        tekscik = GameObject.FindWithTag("text");
+        Tekst = tekscik.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Tekst.text = punkty.ToString();
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
         movement();
