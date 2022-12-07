@@ -13,6 +13,7 @@ public class orderControl : MonoBehaviour
     public GameObject player;
     public float[] transformsy;
     public float heightDifferent;
+    public Sprite mapa;
     void Start()
     {
        // startOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
@@ -20,19 +21,20 @@ public class orderControl : MonoBehaviour
         transformsy = new float[sprity.Length];
         for(int i=0; i < sprity.Length; i++)
         {
+            /*
             if (sprity[i].transform.position.y>0)
             {
                 transformsy[i] = sprity[i].transform.position.y - sprity[i].bounds.size.y / 2;
                 sprity[i].sortingOrder = 1000 - Mathf.Abs((int)(100 * transformsy[i]));
-                Debug.Log(sprity[i].bounds.size.y);
             }
             else
             {
                 transformsy[i] = sprity[i].transform.position.y - sprity[i].bounds.size.y / 2;
                 sprity[i].sortingOrder = 1000 + Mathf.Abs((int)(100 * transformsy[i]));
-                Debug.Log(sprity[i].bounds.size.y);
             }
-            
+            */
+            transformsy[i] = 100*mapa.bounds.size.y / 2 - 100 *(sprity[i].transform.position.y - sprity[i].bounds.size.y/2) ;
+            sprity[i].sortingOrder = (int)transformsy[i];
         }
     }
 
@@ -44,15 +46,9 @@ public class orderControl : MonoBehaviour
 
     public void check()
     {
-        if(player.transform.position.y>0)
-        {
-            player.GetComponent<SpriteRenderer>().sortingOrder = 1000 - Mathf.Abs((int)(100 * player.transform.position.y) + (int)player.GetComponent<SpriteRenderer>().bounds.size.y / 2) ;
-        }
-        else
-        {
-            player.GetComponent<SpriteRenderer>().sortingOrder = 1000 + Mathf.Abs((int)(100 * player.transform.position.y) + (int)player.GetComponent<SpriteRenderer>().bounds.size.y / 2);
-        }
-        
+        player.GetComponent<SpriteRenderer>().sortingOrder = (int)(100*(mapa.bounds.size.y / 2) - 100*player.transform.position.y);
+
+
     }
     /*
     private void OnTriggerEnter2D(Collider2D collision)
