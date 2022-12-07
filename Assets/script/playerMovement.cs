@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
-    bool wygrana;
-    int punkty = 0;
     GameObject obrazek;
     Image obraz;
     GameObject tekscik;
@@ -53,6 +51,8 @@ public class playerMovement : MonoBehaviour
 
         
     }
+<<<<<<< Updated upstream
+=======
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
@@ -72,4 +72,5 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
+>>>>>>> Stashed changes
 }
