@@ -11,17 +11,20 @@ public class RayCast : MonoBehaviour
     float step;
     Vector2 pozgracza;
     Vector2 pozgraczaray;
-    GameObject gracz;
+    public GameObject gracz;
     public Transform transgracza;
     bool WidzeCieOwO;
     public float maxRadius;
     public float maxAngle;
     bool isInFov = false;
     public Collider2D[] overlaps = new Collider2D[20];
+    Vector3 direction;
+    Quaternion rotGoal;
+    public float rotateSpeed;
     private void Awake()
     {
-         gracz = GameObject.FindWithTag("Player");
-        transgracza = gracz.GetComponent<Transform>();
+
+         transgracza = gracz.GetComponent<Transform>();
 
     }
     // Start is called before the first frame update
@@ -36,7 +39,7 @@ public class RayCast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //followStozek();
         pozgracza = new Vector2(transgracza.position.x, transgracza.position.y);
         pozgraczaray = new Vector2(transgracza.position.x - transform.position.x, transgracza.position.y - transform.position.y);
         if (isInFov == true)
@@ -50,8 +53,12 @@ public class RayCast : MonoBehaviour
    
         void podonzaj()
     {
-        transform.position = Vector2.MoveTowards(transform.position, pozgracza, step);
+        transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, step);
+        followStozek();
+        
     }
+
+
 
     private void OnDrawGizmos()
     {
@@ -84,14 +91,14 @@ public class RayCast : MonoBehaviour
 
     public bool inFov(Transform checkingObject, Transform target, float maxAngle, float maxRadius)
     {
-        int count = Physics2D.OverlapCircleNonAlloc(checkingObject.position, maxRadius, overlaps);
+        int count = Physics2D.OverlapCircleNonAlloc(checkingObject.parent.position, maxRadius, overlaps);
         for (int i = 0; i < count + 1; i++)
         {
             if (overlaps[i]!= null)
             {
                 if (overlaps[i].transform.position == target.position)
                 {
-                    Vector2 direct = (target.position - checkingObject.position).normalized;
+                    Vector2 direct = (target.position - checkingObject.parent.position).normalized;
                     float angle = Vector2.Angle(checkingObject.up, direct);
                     if (angle <= maxAngle)
                     {
@@ -108,6 +115,16 @@ public class RayCast : MonoBehaviour
 
         }
         return false;
+    }
+
+    void followStozek()
+    {
+        Vector3 diff = gracz.transform.position - transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
     }
 
 }
