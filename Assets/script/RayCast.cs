@@ -53,7 +53,7 @@ public class RayCast : MonoBehaviour
    
         void podonzaj()
     {
-        transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, step);
+        transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, step*Time.deltaTime);
         followStozek();
         
     }
