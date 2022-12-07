@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638060263961759252
-    m_Hash: 3512982572
+      ticks: 638060266090593553
+    m_Hash: 4251919404
   m_LockFileStatus:
     m_FilePath: D:/unity projekty/gierka/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638060264159363494
-    m_Hash: 632582059
+      ticks: 638060266090603558
+    m_Hash: 1519852532
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
