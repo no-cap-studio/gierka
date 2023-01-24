@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
+    public bool ruch;
     void Start()
     {
         
@@ -16,9 +17,13 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
-        movement();
+        if(ruch == true)
+        {
+            inputX = Input.GetAxis("Horizontal");
+            inputY = Input.GetAxis("Vertical");
+            movement();
+        }    
+        
     }
 
     void movement()
