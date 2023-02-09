@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -21,13 +22,23 @@ public class RayCast : MonoBehaviour
     Vector3 direction;
     Quaternion rotGoal;
     public float rotateSpeed;
-    private Vector3[] sciezka = { new Vector3(-3.455f, 13.3f, 0f), new Vector3(-0.478f, 13.3f, 0f), new Vector3(-0.478f, 10.801f, 0f), new Vector3(-4.921f, 10.801f, 0f) };
-    int i = 0;
+    public GameObject[] posterunki;
+    private Vector3[] sciezka;
+    int liczba = 0;
    
     private void Awake()
     {
 
         transgracza = gracz.GetComponent<Transform>();
+        
+            sciezka = new Vector3[posterunki.Length];
+            for (int i = 0; i < posterunki.Length-1; i++)
+            {
+                sciezka[i] = posterunki[i].transform.position;
+            }
+            transgracza = gracz.GetComponent<Transform>();
+
+        
 
     }
     // Start is called before the first frame update
@@ -44,16 +55,17 @@ public class RayCast : MonoBehaviour
         
         if (isInFov != true)
         {
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[i], step * Time.deltaTime);
-            if (transform.parent.position == sciezka[i])
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], step * Time.deltaTime);
+            if (transform.parent.position == sciezka[liczba])
             {
-                if (i == 3)
+                if (liczba == sciezka.Length-1)
                 {
-                    i = 0;
+                    liczba = 0;
+                    System.Array.Reverse(sciezka);
                 }
                 else
                 {
-                    i++;
+                    liczba++;
                 }
 
             }
@@ -150,17 +162,17 @@ public class RayCast : MonoBehaviour
         {
         if (isInFov != true)
         {
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[i], step * Time.deltaTime);
-            if (transform.parent.position == sciezka[i])
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], step * Time.deltaTime);
+            if (transform.parent.position == sciezka[liczba])
             {
-                if(i == 3)
+                if(liczba == 3)
                 {
-                    i = 0;
+                    liczba = 0;
                     yield return new WaitForSeconds(2);
                 }
                 else
                 {
-                    i++;
+                    liczba++;
                     yield return new WaitForSeconds(2);
                 }
 

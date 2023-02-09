@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
+    public GameObject Canvascanvas;
     public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
@@ -45,5 +46,13 @@ public class playerMovement : MonoBehaviour
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,0);
 
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "enemy")
+        {
+            Canvascanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }

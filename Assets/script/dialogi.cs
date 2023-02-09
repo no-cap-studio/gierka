@@ -8,15 +8,18 @@ public class dialogi : MonoBehaviour
     public GameObject gracz;
     public ScriptableObject script;
     public GameObject canvas;
-    private int liczba = 0;
-    private bool dziala = true;
-    string[] tab = {"Jasper musisz ruszyc swoja zmenelona dupe i splacic swoj dlug","Nie mam pieniendze","Oddasz mi w naturze znaczy w bananach, w parku pilnuja skrzyni pelnej bananow"
-        ,"A jak mnie zlapia ?","Nie zrobio ci wiekszej krzywdy niz jak ja cie zlape"};
+    public int liczba = 0;
+    public bool dziala = true;
+    public List<string> tab = new List<string>();
+    public string[] tablicunia = { "Jasper! Dosz³y mnie s³uchy o nowym towarze na ulicach - ¿ó³ty, s³odki, a tuptuœ fika³ po nim przez trzy dni.", " Mówi¹ na niego banany. Im wiêcej informacji na jego temat znajdziesz - tym lepiej."," Mój informator czeka na ciebie w parku, wyci¹gnij od niego wiêcej informacji." };
+
+
     void Awake()
     {
-        
+        tab = 
         gracz.GetComponent<playerMovement>().ruch = false;
         napis.text = tab[0];
+
     }
 
     // Update is called once per frame
@@ -24,10 +27,11 @@ public class dialogi : MonoBehaviour
     {
         if(dziala)
         {
+            canvas.SetActive(true);
             if (Input.GetButtonDown("Jump"))
             {
                 liczba++;
-                if (liczba > 4)
+                if (liczba > tab.Count-1)
                 {
                     dziala = false;
                     napis.text = "";
@@ -42,6 +46,7 @@ public class dialogi : MonoBehaviour
 
             }
         }
+       
         
     }
     
