@@ -12,6 +12,9 @@ public class playerMovement : MonoBehaviour
     public bool ruch;
     public int licznik = 0;
     public TMPro.TextMeshProUGUI napis;
+    public Button dialogTriger;
+    public Button nextSentence;
+    public bool isTalking = false;
     void Start()
     {
         Canvascanvas.SetActive(false);
@@ -49,7 +52,22 @@ public class playerMovement : MonoBehaviour
 
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,0);
 
-        
+        if (dialogTriger != null)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (isTalking == false)
+                {
+                    dialogTriger.onClick.Invoke();
+                }
+                else
+                {
+                    nextSentence.onClick.Invoke();
+                }
+            }
+        }
+
+
     }
     public void OnCollisionStay2D(Collision2D collision)
     {

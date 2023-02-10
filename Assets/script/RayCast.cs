@@ -25,12 +25,11 @@ public class RayCast : MonoBehaviour
     public GameObject[] posterunki;
     public Vector3[] sciezka;
     int liczba = 0;
-   
-    private void Awake()
-    {
+    public Vector3 cel;
+    public GameObject stozek;
 
-        transgracza = gracz.GetComponent<Transform>();
-        
+    private void Awake()
+    {        
             sciezka = new Vector3[posterunki.Length];
             for (int i = 0; i <= posterunki.Length-1; i++)
             {
@@ -45,7 +44,7 @@ public class RayCast : MonoBehaviour
     void Start()
     {
         step = speed * Time.deltaTime;
-
+       
 
     }
 
@@ -55,7 +54,8 @@ public class RayCast : MonoBehaviour
         
         if (isInFov != true)
         {
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], step * Time.deltaTime);
+            cel = sciezka[liczba];
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, cel, step * Time.deltaTime);
             if (transform.parent.position == sciezka[liczba])
             {
                 if (liczba == sciezka.Length-1)
@@ -71,22 +71,30 @@ public class RayCast : MonoBehaviour
             }
         }
 
-                followStozek();
-            pozgracza = new Vector2(transgracza.position.x, transgracza.position.y);
-            pozgraczaray = new Vector2(transgracza.position.x - transform.position.x, transgracza.position.y - transform.position.y);
-            if (isInFov == true)
-            {
+        
+        pozgracza = new Vector2(transgracza.position.x, transgracza.position.y);
+        pozgraczaray = new Vector2(transgracza.position.x - transform.position.x, transgracza.position.y - transform.position.y);
+        if (isInFov == true)
+        {
                 podonzaj();
-            }
+                stozek.SetActive(false);
+        }
+        else
+        {
+            degreeChecker();
+            stozek.SetActive(true);
+        }
 
-            isInFov = inFov(transform, transgracza, maxAngle, maxRadius);
+        isInFov = inFov(transform, transgracza, maxAngle, maxRadius);
 
         
     }
         void podonzaj()
         {
+            cel = pozgracza;
             transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, step * Time.deltaTime);
             followStozek();
+            
 
         }
 
@@ -106,12 +114,10 @@ public class RayCast : MonoBehaviour
             if (!isInFov)
             {
                 Gizmos.color = Color.red;
-                //Debug.Log("1");
             }
             else
             {
                 Gizmos.color = Color.green;
-                //Debug.Log("2");
             }
 
 
@@ -149,15 +155,48 @@ public class RayCast : MonoBehaviour
             return false;
         }
 
+    public void degreeChecker()
+    {
+        if (cel != null)
+        {
+            if (Mathf.Abs(transform.position.x - cel.x) > Mathf.Abs(transform.position.y - cel.y))
+            {
+                if (transform.position.x > cel.x)
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f, 90);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f, -90);
+                }
+            }
+            else
+            {
+                if (transform.position.y > cel.y)
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f,180);
+
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f, 0);
+
+                }
+            }
+            
+        }
+        
+    }
+
         void followStozek()
         {
             Vector3 diff = gracz.transform.position - transform.position;
             diff.Normalize();
-
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-
         }
+
+
         IEnumerator Czekaj()
         {
         if (isInFov != true)
