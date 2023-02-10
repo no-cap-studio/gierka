@@ -10,9 +10,11 @@ public class playerMovement : MonoBehaviour
     public float movementSpeed;
     public float inputX, inputY;
     public bool ruch;
+    public int licznik = 0;
+    public TMPro.TextMeshProUGUI napis;
     void Start()
     {
-        
+        Canvascanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,10 +22,12 @@ public class playerMovement : MonoBehaviour
     {
         if(ruch == true)
         {
+            
             inputX = Input.GetAxis("Horizontal");
             inputY = Input.GetAxis("Vertical");
             movement();
-        }    
+            napis.text = licznik.ToString();
+}    
         
     }
 
@@ -47,12 +51,22 @@ public class playerMovement : MonoBehaviour
 
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "enemy")
+        
+        if(collision.gameObject.CompareTag("enemy"))
         {
             Canvascanvas.SetActive(true);
             Time.timeScale = 0;
+        }
+        
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("banana"))
+        {
+            Destroy(collision.gameObject);
+            licznik += 1;
         }
     }
 }

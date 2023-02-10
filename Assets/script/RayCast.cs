@@ -23,7 +23,7 @@ public class RayCast : MonoBehaviour
     Quaternion rotGoal;
     public float rotateSpeed;
     public GameObject[] posterunki;
-    private Vector3[] sciezka;
+    public Vector3[] sciezka;
     int liczba = 0;
    
     private void Awake()
@@ -32,7 +32,7 @@ public class RayCast : MonoBehaviour
         transgracza = gracz.GetComponent<Transform>();
         
             sciezka = new Vector3[posterunki.Length];
-            for (int i = 0; i < posterunki.Length-1; i++)
+            for (int i = 0; i <= posterunki.Length-1; i++)
             {
                 sciezka[i] = posterunki[i].transform.position;
             }
@@ -106,12 +106,12 @@ public class RayCast : MonoBehaviour
             if (!isInFov)
             {
                 Gizmos.color = Color.red;
-                Debug.Log("1");
+                //Debug.Log("1");
             }
             else
             {
                 Gizmos.color = Color.green;
-                Debug.Log("2");
+                //Debug.Log("2");
             }
 
 

@@ -26,7 +26,7 @@ public class cameraBevour : MonoBehaviour
     }
     void changingCameraRotation()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.N))
         {
             Vector3 axis= new Vector3(0,1,0);
             transform.RotateAround(target.transform.position, axis, 90);

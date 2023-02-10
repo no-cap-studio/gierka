@@ -16,7 +16,9 @@ public class dialogi : MonoBehaviour
 
     void Awake()
     {
-        tab = 
+        tab.Add(tablicunia[0]);
+        tab.Add(tablicunia[1]);
+        tab.Add(tablicunia[2]);
         gracz.GetComponent<playerMovement>().ruch = false;
         napis.text = tab[0];
 
@@ -37,6 +39,8 @@ public class dialogi : MonoBehaviour
                     napis.text = "";
                     canvas.SetActive(false);
                     gracz.GetComponent<playerMovement>().ruch = true;
+                    liczba = 0;
+                    tab.Clear();
                 }
                 else
                 {
