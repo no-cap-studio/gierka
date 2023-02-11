@@ -197,8 +197,8 @@ public class RayCast : MonoBehaviour
         }
 
 
-        IEnumerator Czekaj()
-        {
+    IEnumerator Czekaj()
+    {
         if (isInFov != true)
         {
             transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], step * Time.deltaTime);
@@ -220,7 +220,8 @@ public class RayCast : MonoBehaviour
 
         }
     }
+   
 
-    }
+}
 
 

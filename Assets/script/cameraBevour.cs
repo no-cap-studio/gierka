@@ -10,29 +10,39 @@ public class cameraBevour : MonoBehaviour
     public float smoothness=0.125f;
     public float speed;
     Vector3 smoothnedMovement;
+    public Vector2 minPos = new Vector2(2f,2f);
+    public Vector2 maxPos = new Vector2(9.8f, -26f);
+
 
 
     void LateUpdate()
     {
         follow();
-        changingCameraRotation();
+        
     }
 
     void follow()
     {
+        /*
+        if (transform.position.y > minPos.y && transform.position.x < maxPos.x && transform.position.y < maxPos.y && transform.position.x > minPos.x)
+        {
+            Vector3 desiredPosition = target.transform.position + positionOffSet;
+            smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+            transform.position = smoothnedMovement;
+        }
+        else if (transform.position.x >= maxPos.x || transform.position.x <= minPos.x)
+        {
+            
+        }
+        else if (transform.position.y <= minPos.y && transform.position.y >= maxPos.y )
+        {
+
+        }
+        */
         Vector3 desiredPosition = target.transform.position + positionOffSet;
         smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
         transform.position = smoothnedMovement;
+
     }
-    void changingCameraRotation()
-    {
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            Vector3 axis= new Vector3(0,1,0);
-            transform.RotateAround(target.transform.position, axis, 90);
-            
-        }
-        
-        
-    }
+  
 }
