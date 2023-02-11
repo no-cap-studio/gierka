@@ -17,11 +17,16 @@ public class playerMovement : MonoBehaviour
     public bool wygrana;
     void Start()
     {
+<<<<<<< Updated upstream
         obrazek = GameObject.FindWithTag("wygrama");
         obraz = obrazek.GetComponent<Image>();
         tekscik = GameObject.FindWithTag("tekst");
         Tekst = tekscik.GetComponent<TextMeshProUGUI>();
         
+=======
+        Time.timeScale = 1;
+        Canvascanvas.SetActive(false);
+>>>>>>> Stashed changes
     }
 
 
@@ -74,4 +79,27 @@ public class playerMovement : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
+=======
+
+    }
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            Canvascanvas.SetActive(true);
+            
+        }
+        
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("banana"))
+        {
+            Destroy(collision.gameObject);
+            licznik += 1;
+        }
+    }
+>>>>>>> Stashed changes
 }

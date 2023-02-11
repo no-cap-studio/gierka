@@ -13,6 +13,13 @@ public class dodatkoweZab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream:Assets/script/dodatkoweZab.cs
         
+=======
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("ScenkaUwU", LoadSceneMode.Single);
+        }
+>>>>>>> Stashed changes:Assets/script/start.cs
     }
 }

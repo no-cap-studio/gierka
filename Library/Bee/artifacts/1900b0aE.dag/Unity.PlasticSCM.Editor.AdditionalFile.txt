@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 D:\gierka
+=======
+D:\monke\gierka\gierka
+>>>>>>> Stashed changes
