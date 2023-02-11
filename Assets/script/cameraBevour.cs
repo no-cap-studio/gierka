@@ -23,25 +23,70 @@ public class cameraBevour : MonoBehaviour
 
     void follow()
     {
-        /*
-        if (transform.position.y > minPos.y && transform.position.x < maxPos.x && transform.position.y < maxPos.y && transform.position.x > minPos.x)
+
+        if (target.transform.position.y > minPos.y && target.transform.position.x < maxPos.x && target.transform.position.y < maxPos.y && target.transform.position.x > minPos.x)
         {
             Vector3 desiredPosition = target.transform.position + positionOffSet;
             smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
             transform.position = smoothnedMovement;
         }
-        else if (transform.position.x >= maxPos.x || transform.position.x <= minPos.x)
-        {
-            
-        }
-        else if (transform.position.y <= minPos.y && transform.position.y >= maxPos.y )
+        else
         {
 
+            if (target.transform.position.x >= maxPos.x && target.transform.position.y <= minPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(maxPos.x, minPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if(target.transform.position.x >= maxPos.x && target.transform.position.y >= maxPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(maxPos.x, maxPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.x <= minPos.x && target.transform.position.y <= minPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(minPos.x, minPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.x <= minPos.x && target.transform.position.y >= maxPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(minPos.x, maxPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.x >= maxPos.x)
+            {
+                Vector3 desiredPosition = new Vector3(maxPos.x, target.transform.position.y + positionOffSet.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.x <= minPos.x)
+            {
+                Vector3 desiredPosition = new Vector3(minPos.x, target.transform.position.y + positionOffSet.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.y >= maxPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(target.transform.position.x + positionOffSet.x, maxPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
+            else if (target.transform.position.y <= minPos.y)
+            {
+                Vector3 desiredPosition = new Vector3(target.transform.position.x + positionOffSet.x, minPos.y, -1);
+                smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+                transform.position = smoothnedMovement;
+            }
         }
-        */
-        Vector3 desiredPosition = target.transform.position + positionOffSet;
-        smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
-        transform.position = smoothnedMovement;
+        
+        
+       // Vector3 desiredPosition = target.transform.position + positionOffSet;
+        //smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
+        //transform.position = smoothnedMovement;
 
     }
   

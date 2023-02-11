@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class dialogTrigerDetector : MonoBehaviour
 {
     public GameObject button;
+    public GameObject dialogMan;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class dialogTrigerDetector : MonoBehaviour
         {
             button.SetActive(false);
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = null;
+            dialogMan.GetComponent<dialogManager>().endDialogue();
         }
         
     }
