@@ -54,7 +54,18 @@ public class dialogManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        DialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(typeSentence(sentence));
+    }
+
+    IEnumerator typeSentence(string sentence)
+    {
+        DialogueText.text = "";
+        foreach (char c in sentence.ToCharArray())
+        {
+            DialogueText.text += c;
+            yield return new WaitForSeconds(0.1f); ;
+        }
     }
 
     public void endDialogue()

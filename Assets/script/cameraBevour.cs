@@ -82,11 +82,6 @@ public class cameraBevour : MonoBehaviour
                 transform.position = smoothnedMovement;
             }
         }
-        
-        
-       // Vector3 desiredPosition = target.transform.position + positionOffSet;
-        //smoothnedMovement = Vector3.Lerp(transform.position, desiredPosition, smoothness);
-        //transform.position = smoothnedMovement;
 
     }
   
