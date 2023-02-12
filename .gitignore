@@ -3,6 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 [Ll]ibrary/
+Library/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -72,3 +73,13 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 
+Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta
+Library/ArtifactDB
+Library/Bee/1900b0aE-inputdata.json
+*.dag
+*.json
+*.dll
+*.rsp
+*.asset
+*.pdb

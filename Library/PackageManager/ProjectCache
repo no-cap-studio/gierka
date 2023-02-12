@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638060489297368933
-    m_Hash: 1166588220
+      ticks: 638118287450000000
+    m_Hash: 3960934928
   m_LockFileStatus:
     m_FilePath: D:/gierka/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638060489297378911
-    m_Hash: 1488374266
+      ticks: 638118287450000000
+    m_Hash: 12267094
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

@@ -384,6 +384,7 @@
 "Assets/script/DialogueTrigger.cs"
 "Assets/script/enemyAnimationCotrol.cs"
 "Assets/script/GameManager.cs"
+"Assets/script/hiding.cs"
 "Assets/script/lookAt.cs"
 "Assets/script/music.cs"
 "Assets/script/playerMovement.cs"

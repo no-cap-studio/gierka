@@ -12,6 +12,8 @@ public class playerMovement : MonoBehaviour
     public Button nextSentence;
     public bool isTalking = false;
     public GameManager manager;
+    public bool isHiding = false;
+    public hiding hideMet;
     void Start()
     {
 
@@ -20,13 +22,25 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ruch == true)
+        if (ruch == true && isHiding == false)
         {
-            
+
             inputX = Input.GetAxis("Horizontal");
             inputY = Input.GetAxis("Vertical");
             movement();
-}    
+            trigerTalk();
+            hiding();   
+            
+        }
+        else if (isHiding == true)
+        {
+            if (hideMet != null)
+            {
+                Debug.Log("jestem tu");
+                hideMet.unhide();
+            }
+           
+        }
         
     }
 
@@ -48,6 +62,13 @@ public class playerMovement : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y,0);
 
+
+
+    }
+
+    public void trigerTalk()
+    {
+
         if (dialogTriger != null)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -62,13 +83,22 @@ public class playerMovement : MonoBehaviour
                 }
             }
         }
-
-
     }
+
+    public void hiding()
+    {
+        if (hideMet != null && Input.GetKeyDown(KeyCode.F))
+        {
+            hideMet.hidinges();
+        }
+    }
+
+
+
     public void OnCollisionStay2D(Collision2D collision)
     {
         
-        if(collision.gameObject.CompareTag("enemy"))
+        if(collision.gameObject.CompareTag("enemy") && CompareTag("Player"))
         {
             manager.EndGame();
         }
