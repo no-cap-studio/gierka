@@ -141,7 +141,7 @@ public class RayCast : MonoBehaviour
                         if (angle <= maxAngle)
                         {
                             RaycastHit2D hit = Physics2D.Raycast(checkingObject.transform.position, direct, maxRadius);
-                            if (hit.transform == target)
+                            if(hit.transform == target && gracz.CompareTag("Player")) 
                             {
                                 return true;
                             }
