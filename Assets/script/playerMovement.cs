@@ -5,19 +5,16 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
-    public GameObject Canvascanvas;
-    public GameObject player;
     public float movementSpeed;
     public float inputX, inputY;
     public bool ruch;
-    public int licznik = 0;
-    public TMPro.TextMeshProUGUI napis;
     public Button dialogTriger;
     public Button nextSentence;
     public bool isTalking = false;
+    public GameManager manager;
     void Start()
     {
-        Canvascanvas.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -29,7 +26,6 @@ public class playerMovement : MonoBehaviour
             inputX = Input.GetAxis("Horizontal");
             inputY = Input.GetAxis("Vertical");
             movement();
-            napis.text = licznik.ToString();
 }    
         
     }
@@ -38,19 +34,19 @@ public class playerMovement : MonoBehaviour
     {
         if(Input.GetAxis("Horizontal")!=0)
         {
-            player.transform.Translate(Vector2.right *inputX * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector2.right *inputX * movementSpeed * Time.deltaTime);
         }
         
         if(inputY!=0)
         {
-            player.transform.Translate(Vector2.up * inputY * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector2.up * inputY * movementSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
             inputX = 0;
         }
 
-        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,0);
+        transform.position = new Vector3(transform.position.x, transform.position.y,0);
 
         if (dialogTriger != null)
         {
@@ -74,8 +70,7 @@ public class playerMovement : MonoBehaviour
         
         if(collision.gameObject.CompareTag("enemy"))
         {
-            Canvascanvas.SetActive(true);
-            Time.timeScale = 0;
+            manager.EndGame();
         }
         
     }
@@ -84,7 +79,7 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("banana"))
         {
             Destroy(collision.gameObject);
-            licznik += 1;
+            manager.addpoint();
         }
     }
 }
