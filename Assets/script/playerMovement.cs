@@ -37,7 +37,9 @@ public class playerMovement : MonoBehaviour
             if (hideMet != null)
             {
                 Debug.Log("jestem tu");
+                hideMet.choosingPosition();
                 hideMet.unhide();
+                
             }
            
         }
