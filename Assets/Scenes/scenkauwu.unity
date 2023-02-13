@@ -4976,7 +4976,7 @@ Camera:
   far clip plane: 100
   field of view: 19
   orthographic: 1
-  orthographic size: 0.42396444
+  orthographic size: 2
   m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
@@ -5985,7 +5985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &1559689380
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -6015,14 +6015,16 @@ PlayableDirector:
     value: {fileID: 1244268927}
   - key: {fileID: -6662580749430002146, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
     value: {fileID: 1411987033}
-  - key: {fileID: -465661831449456743, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
-    value: {fileID: 1945300724}
   - key: {fileID: -3786372713782287862, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
     value: {fileID: 1692244582}
   - key: {fileID: -8704179742917679764, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
     value: {fileID: 2111902127}
   - key: {fileID: -2508359412305149938, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
     value: {fileID: 1808428890}
+  - key: {fileID: -2018836356850575657, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
+    value: {fileID: 1945300723}
+  - key: {fileID: -7900483482910846458, guid: 8d734be9a5e9bef47b42c843bc4fcce0, type: 2}
+    value: {fileID: 578307686}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1559689381
@@ -8078,7 +8080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1945300724
 Animator:
   serializedVersion: 4
@@ -9122,7 +9124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2111902128
 MonoBehaviour:
   m_ObjectHideFlags: 0
