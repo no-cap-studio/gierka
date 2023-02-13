@@ -9,6 +9,10 @@ public class DialogueTrigger : MonoBehaviour
     public string ifActive;
     public Dialogue[] dialogue;
     public dialogManager dial;
+    public GameObject dialogIcon;
+    public GameObject dialogMan;
+    public Quest quest;
+    public QuestManager qm;
 
     public void Start()
     {
@@ -43,6 +47,31 @@ public class DialogueTrigger : MonoBehaviour
         if(!string.IsNullOrEmpty(makeActive))
         {
             dial.dialoguePerm.Add(makeActive, "1");
+        }
+
+        if (quest != null)
+        {
+            qm.questTriger(quest);
+        }
+        
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            dialogIcon.SetActive(true);
+            collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            dialogIcon.SetActive(false);
+            collision.gameObject.GetComponent<playerMovement>().dialogTriger = null;
+            dialogMan.GetComponent<dialogManager>().endDialogue();
         }
 
     }

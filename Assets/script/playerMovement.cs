@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour
     public float movementSpeed;
     public float inputX, inputY;
     public bool ruch;
-    public Button dialogTriger;
+    public GameObject dialogTriger;
     public Button nextSentence;
     public bool isTalking = false;
     public GameManager manager;
@@ -77,7 +77,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (isTalking == false)
                 {
-                    dialogTriger.onClick.Invoke();
+                    dialogTriger.GetComponent<DialogueTrigger>().triggerDialogue(); ;
                 }
                 else
                 {

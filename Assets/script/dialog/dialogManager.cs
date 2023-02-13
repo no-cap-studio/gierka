@@ -25,10 +25,6 @@ public class dialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (string key in dialoguePerm.Keys)
-        {
-            Debug.Log(String.Format("{0}: {1}", key, dialoguePerm[key]));
-        }
     }
 
     public void startDialogue(Dialogue dialogue)
