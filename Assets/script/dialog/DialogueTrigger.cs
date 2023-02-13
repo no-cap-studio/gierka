@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public string makeActive;
-    public string ifActive;
-    public Dialogue[] dialogue;
+    public List<Dialogue> dialogues;
     public dialogManager dial;
     public GameObject dialogIcon;
+    public GameObject questIcon;
     public GameObject dialogMan;
     public Quest quest;
     public QuestManager qm;
+    public bool isThereQuest=false;
 
     public void Start()
     {
@@ -21,46 +21,28 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void triggerDialogue()
     {
-        if (!string.IsNullOrEmpty(ifActive))
+        if (isThereQuest == false)
         {
-            if (dial.dialoguePerm.ContainsKey(ifActive))
-            {
-                if (dial.dialoguePerm[ifActive].ToString() != "0")
-                {
-                    dial.startDialogue(dialogue[1]);
-                }
-                else
-                {
-                    dial.startDialogue(dialogue[0]);
-                }
-            }
-            else {
-                dial.startDialogue(dialogue[0]);
-            }
-            
-
+            dial.startDialogue(dialogues[0]);
         }
-        else
-        {
-            dial.startDialogue(dialogue[0]);
+        else {
+            dial.startDialogue(dialogues[1]);
+            dial.quest = quest;
+            dial.dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>() ;
         }
-        if(!string.IsNullOrEmpty(makeActive))
-        {
-            dial.dialoguePerm.Add(makeActive, "1");
-        }
-
-        if (quest != null)
-        {
-            qm.questTriger(quest);
-        }
-        
-
+          
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            dialogIcon.SetActive(true);
+            if (isThereQuest == false)
+            {
+                dialogIcon.SetActive(true);
+            }
+            else {
+                questIcon.SetActive(true);
+            }
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
         }
 
@@ -69,6 +51,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+
             dialogIcon.SetActive(false);
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = null;
             dialogMan.GetComponent<dialogManager>().endDialogue();

@@ -17,6 +17,9 @@ public class dialogManager : MonoBehaviour
     public GameObject player;
     public Hashtable dialoguePerm = new Hashtable();
     public GameObject dialogueBackGround;
+    public QuestManager qm;
+    public Quest quest;
+    public DialogueTrigger dialogueTrigger;
     void Start()
     {
         sentences = new Queue<string>();
@@ -47,6 +50,11 @@ public class dialogManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             endDialogue();
+            if (quest != null)
+            {
+                addQuest(quest);
+                
+            }
             return;
         }
         string sentence = sentences.Dequeue();
@@ -71,4 +79,18 @@ public class dialogManager : MonoBehaviour
         dialogueBackGround.SetActive(false);
         player.GetComponent<playerMovement>().isTalking = false;
     }
+
+    public void addQuest(Quest q)
+    {
+        qm.questTriger(q);
+        quest = null;
+        dialogueTrigger.isThereQuest = false;
+        dialogueTrigger.dialogues.RemoveAt(dialogueTrigger.dialogues.Count - 1);
+        Destroy(dialogueTrigger.GetComponent<Quest>());
+        Destroy(dialogueTrigger.GetComponent<QuestTriger>());
+        Destroy(dialogueTrigger.questIcon);
+        dialogueTrigger = null;
+    }
+
+
 }

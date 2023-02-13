@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
+    [TextArea]
+    public string name;
+    [TextArea]
+    public string description;
+
+    public List<questCheck> checks;
     
     void Start()
     {
