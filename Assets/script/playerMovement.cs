@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public GameManager manager;
     public bool isHiding = false;
     public hiding hideMet;
+    public QuestManager qm;
     void Start()
     {
 
@@ -43,6 +44,8 @@ public class playerMovement : MonoBehaviour
             }
            
         }
+
+        showQuestLog();
         
     }
 
@@ -113,5 +116,14 @@ public class playerMovement : MonoBehaviour
             Destroy(collision.gameObject);
             manager.addpoint();
         }
+    }
+
+    public void showQuestLog()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            qm.openQuestBook();
+        }
+        
     }
 }
