@@ -8,8 +8,9 @@ public class Quest : MonoBehaviour
     public string name;
     [TextArea]
     public string description;
-
+    public bool done = false;
     public List<questCheck> checks;
+   
     
     void Start()
     {
@@ -21,5 +22,10 @@ public class Quest : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setActive()
+    {
+        checks[0].IsActive = true;
     }
 }

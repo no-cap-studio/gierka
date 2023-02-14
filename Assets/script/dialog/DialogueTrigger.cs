@@ -8,10 +8,11 @@ public class DialogueTrigger : MonoBehaviour
     public List<Dialogue> dialogues;
     public dialogManager dial;
     public GameObject dialogIcon;
-    public GameObject questIcon;
+    [HideInInspector] public GameObject questIcon;
     public GameObject dialogMan;
-    public Quest quest;
+    [HideInInspector] public Quest quest;
     public QuestManager qm;
+    [HideInInspector] public GameObject check;
     public bool isThereQuest=false;
 
     public void Start()
@@ -26,9 +27,19 @@ public class DialogueTrigger : MonoBehaviour
             dial.startDialogue(dialogues[0]);
         }
         else {
-            dial.startDialogue(dialogues[1]);
-            dial.quest = quest;
-            dial.dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>() ;
+            if (quest != null)
+            {
+                dial.startDialogue(dialogues[1]);
+                dial.quest = quest;
+                dial.dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
+            }
+            else if (check != null){
+                dial.dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
+                dial.check = check.GetComponent<questCheck>();
+                dial.startDialogue(dialogues[1]);
+                
+            }
+            
         }
           
     }
@@ -40,9 +51,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 dialogIcon.SetActive(true);
             }
-            else {
-                questIcon.SetActive(true);
-            }
+
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
         }
 

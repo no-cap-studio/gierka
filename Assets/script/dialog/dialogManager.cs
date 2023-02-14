@@ -20,6 +20,8 @@ public class dialogManager : MonoBehaviour
     public QuestManager qm;
     public Quest quest;
     public DialogueTrigger dialogueTrigger;
+    public questCheck check;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -49,12 +51,9 @@ public class dialogManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+
             endDialogue();
-            if (quest != null)
-            {
-                addQuest(quest);
-                
-            }
+
             return;
         }
         string sentence = sentences.Dequeue();
@@ -78,19 +77,37 @@ public class dialogManager : MonoBehaviour
         nameSpace.SetActive(false);
         dialogueBackGround.SetActive(false);
         player.GetComponent<playerMovement>().isTalking = false;
+
+        if (quest != null)
+        {
+            addQuest(quest);
+
+        }
+        else if (check != null)
+        {
+            Debug.Log("jak sie wlaczy to nwm");
+            qm.cecked(check);
+            dialogueTrigger.check = null;
+            dialogueTrigger.isThereQuest = false;
+            Destroy(dialogueTrigger.questIcon);
+            dialogueTrigger = null;
+            check = null;
+        }
     }
 
     public void addQuest(Quest q)
     {
         qm.questTriger(q);
+        quest.setActive();
         quest = null;
         dialogueTrigger.isThereQuest = false;
         dialogueTrigger.dialogues.RemoveAt(dialogueTrigger.dialogues.Count - 1);
-        Destroy(dialogueTrigger.GetComponent<Quest>());
+        dialogueTrigger.quest = null;
         Destroy(dialogueTrigger.GetComponent<QuestTriger>());
         Destroy(dialogueTrigger.questIcon);
         dialogueTrigger = null;
     }
+
 
 
 }

@@ -15,6 +15,7 @@ public class QuestTriger : MonoBehaviour
         trigerek.dialogues.Add(dialog);
         trigerek.isThereQuest = true;
         trigerek.questIcon = questIcon;
+        trigerek.quest = quest;
     }
 
     // Update is called once per frame
