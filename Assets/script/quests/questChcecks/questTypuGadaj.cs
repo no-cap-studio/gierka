@@ -11,13 +11,10 @@ public class questTypuGadaj : questCheck
 
     public override void activating()
     {
-        Debug.Log("aktywuje");
         triger = gameObject.GetComponent<DialogueTrigger>();
         triger.isThereQuest = true;
         triger.dialogues.Add(dialog);
         triger.check = this.gameObject;
-        
-
     }
 
     public override void checking()
@@ -27,9 +24,13 @@ public class questTypuGadaj : questCheck
 
     public override void finish()
     {
-        if (quest.checks.Count - 1 < quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
+        Debug.Log("cipa");
+        Debug.Log(quest.checks.Count);
+        Debug.Log(quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()));
+
+        if (quest.checks.Count-1> quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
         {
-            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())].IsActive = true;
+            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())+1].IsActive = true;
         }
     }
 }

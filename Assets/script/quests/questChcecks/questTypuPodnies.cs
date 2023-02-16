@@ -7,7 +7,6 @@ public class questTypuPodnies : questCheck
 {
     public override void activating()
     {
-        
     }
     public override void checking()
     {
@@ -15,9 +14,11 @@ public class questTypuPodnies : questCheck
     }
     public override void finish()
     {
-        if (quest.checks.Count - 1 < quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
+        Debug.Log(quest.checks.Count);
+        Debug.Log(quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()));
+        if (quest.checks.Count-1 > quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
         {
-            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())].IsActive = true;
+            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())+1].IsActive = true;
         }
     }
 

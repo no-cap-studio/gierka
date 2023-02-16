@@ -67,7 +67,7 @@ public class dialogManager : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
         {
             DialogueText.text += c;
-            yield return new WaitForSeconds(0.1f); ;
+            yield return new WaitForSeconds(0.04f); ;
         }
     }
 
@@ -86,12 +86,7 @@ public class dialogManager : MonoBehaviour
         else if (check != null)
         {
             Debug.Log("jak sie wlaczy to nwm");
-            qm.cecked(check);
-            dialogueTrigger.check = null;
-            dialogueTrigger.isThereQuest = false;
-            Destroy(dialogueTrigger.questIcon);
-            dialogueTrigger = null;
-            check = null;
+            unCheck();
         }
     }
 
@@ -106,6 +101,16 @@ public class dialogManager : MonoBehaviour
         Destroy(dialogueTrigger.GetComponent<QuestTriger>());
         Destroy(dialogueTrigger.questIcon);
         dialogueTrigger = null;
+    }
+
+    public void unCheck()
+    {
+        qm.cecked(check);
+        dialogueTrigger.check = null;
+        dialogueTrigger.isThereQuest = false;
+        Destroy(dialogueTrigger.questIcon);
+        dialogueTrigger = null;
+        check = null;
     }
 
 

@@ -5,22 +5,23 @@ using UnityEngine;
 public abstract class questCheck : MonoBehaviour
 {
     public Quest quest;
-    public string nameOfQuest;
     public string nameOfCheck;
     public QuestManager manager;
     public bool tak0 = false;
+    public bool tak1 = false;
+
     private bool isActive = false;
     public bool IsActive
     {
         get { return isActive; }
-        set { activating(); }
+        set { activating(); isActive = true; tak0 = isActive; }
     }
     
     private bool done = false;
     public bool Done
     {
         get { return done; }
-        set { finish();tak0 = true; }
+        set { finish();done = true; tak1 = done; }
     }
 
     public abstract void activating();

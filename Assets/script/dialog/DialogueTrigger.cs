@@ -9,7 +9,6 @@ public class DialogueTrigger : MonoBehaviour
     public dialogManager dial;
     public GameObject dialogIcon;
     [HideInInspector] public GameObject questIcon;
-    public GameObject dialogMan;
     [HideInInspector] public Quest quest;
     public QuestManager qm;
     [HideInInspector] public GameObject check;
@@ -63,7 +62,7 @@ public class DialogueTrigger : MonoBehaviour
 
             dialogIcon.SetActive(false);
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = null;
-            dialogMan.GetComponent<dialogManager>().endDialogue();
+            dial.GetComponent<dialogManager>().endDialogue();
         }
 
     }

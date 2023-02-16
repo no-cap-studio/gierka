@@ -10,11 +10,12 @@ public class playerMovement : MonoBehaviour
     public bool ruch;
     public GameObject dialogTriger;
     public Button nextSentence;
-    public bool isTalking = false;
+    [HideInInspector] public bool isTalking = false;
     public GameManager manager;
-    public bool isHiding = false;
-    public hiding hideMet;
+    [HideInInspector]public bool isHiding = false;
+    [HideInInspector] public hiding hideMet;
     public QuestManager qm;
+    public przeszukiwanieKoszy trashCan;
     void Start()
     {
 
@@ -30,8 +31,8 @@ public class playerMovement : MonoBehaviour
             inputY = Input.GetAxis("Vertical");
             movement();
             trigerTalk();
-            hiding();   
-            
+            hiding();
+            przeszukajKosz();
         }
         else if (isHiding == true)
         {
@@ -46,7 +47,7 @@ public class playerMovement : MonoBehaviour
         }
 
         showQuestLog();
-        
+       
     }
 
     void movement()
@@ -98,6 +99,15 @@ public class playerMovement : MonoBehaviour
         }
     }
 
+    public void przeszukajKosz()
+    {
+        if (trashCan != null && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("wlacza sie");
+            trashCan.startLooking();
+        }
+    }
+
 
 
     public void OnCollisionStay2D(Collision2D collision)
@@ -113,7 +123,7 @@ public class playerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("banana"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             manager.addpoint();
         }
     }
