@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public int points;
     public TextMeshProUGUI pointSpace;
     public GameObject deadScreen;
+    public QuestManager qm;
     void Start()
     {
         deadScreen.SetActive(false);
+        qm = FindObjectOfType<QuestManager>();
     }
 
     
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
     { 
         points++;
         pointSpace.text = points.ToString();
+        qm.bananaQuestCheck();
+        
     }
 
      

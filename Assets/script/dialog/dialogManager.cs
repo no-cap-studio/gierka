@@ -83,7 +83,7 @@ public class dialogManager : MonoBehaviour
             addQuest(quest);
 
         }
-        else if (check != null)
+        else if (check!=null)
         {
             Debug.Log("jak sie wlaczy to nwm");
             unCheck();
@@ -106,11 +106,16 @@ public class dialogManager : MonoBehaviour
     public void unCheck()
     {
         qm.cecked(check);
-        dialogueTrigger.check = null;
-        dialogueTrigger.isThereQuest = false;
-        Destroy(dialogueTrigger.questIcon);
+        dialogueTrigger.check.Remove(check);
+        if (dialogueTrigger.check.Count == 0)
+        {
+            dialogueTrigger.isThereQuest = false;
+            Destroy(dialogueTrigger.questIcon);
+        }
         dialogueTrigger = null;
         check = null;
+
+
     }
 
 

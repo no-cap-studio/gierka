@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     [HideInInspector] public GameObject questIcon;
     [HideInInspector] public Quest quest;
     public QuestManager qm;
-    [HideInInspector] public GameObject check;
+    public List<questCheck> check;
     public bool isThereQuest=false;
 
     public void Start()
@@ -34,8 +34,8 @@ public class DialogueTrigger : MonoBehaviour
             }
             else if (check != null){
                 dial.dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
-                dial.check = check.GetComponent<questCheck>();
-                dial.startDialogue(dialogues[1]);
+                dial.check = check[check.Count - 1];
+                dial.startDialogue(dialogues[dialogues.Count-1]);
                 
             }
             

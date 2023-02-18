@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quest : MonoBehaviour
 {
     [TextArea]
-    public string name;
+    public string nameOfQuest;
     [TextArea]
     public string description;
     public bool done = false;

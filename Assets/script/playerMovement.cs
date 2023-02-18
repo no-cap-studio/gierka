@@ -126,6 +126,10 @@ public class playerMovement : MonoBehaviour
             collision.gameObject.SetActive(false);
             manager.addpoint();
         }
+        if (collision.gameObject.CompareTag("sideQuestIteam"))
+        { 
+            collision.gameObject.SetActive(false);
+        }
     }
 
     public void showQuestLog()
