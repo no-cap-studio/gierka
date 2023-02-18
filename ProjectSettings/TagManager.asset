@@ -7,6 +7,7 @@ TagManager:
   - banana
   - enemy
   - glomp
+  - sideQuestIteam
   layers:
   - Default
   - TransparentFX
