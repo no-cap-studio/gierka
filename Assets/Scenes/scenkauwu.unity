@@ -991,11 +991,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &156228267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5839755606820355221, guid: a277f396974334e49a0b6784f689485f, type: 3}
-  m_PrefabInstance: {fileID: 293430255}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &172568797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 268177318066831069, guid: a277f396974334e49a0b6784f689485f, type: 3}
@@ -1368,6 +1363,7 @@ GameObject:
   - component: {fileID: 244978038}
   - component: {fileID: 244978037}
   - component: {fileID: 244978036}
+  - component: {fileID: 244978039}
   m_Layer: 0
   m_Name: bonzo1
   m_TagString: Untagged
@@ -1454,14 +1450,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244978035}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.089, y: 5.315, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.819908, y: 10.878754, z: 0.049979586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1749274037}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244978039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244978035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe353d1455ecd1a469786fe1af5f3544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Wprowadzenie
+  description: 
+  done: 0
+  checks:
+  - {fileID: 676570326}
+  - {fileID: 487914182}
 --- !u!1 &249999508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1591,7 @@ Transform:
   - {fileID: 1766786869}
   - {fileID: 87814476}
   - {fileID: 976435329}
+  - {fileID: 292460945}
   m_Father: {fileID: 1893972258}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1663,6 +1678,141 @@ Transform:
   m_Father: {fileID: 1586031700}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &292460942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292460945}
+  - component: {fileID: 292460944}
+  - component: {fileID: 292460943}
+  m_Layer: 0
+  m_Name: complete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &292460943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292460942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: complete
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.04
+  m_fontSizeBase: 0.04
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0.028265983}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &292460944
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292460942}
+  m_CullTransparentMesh: 1
+--- !u!224 &292460945
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292460942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269515645}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.18, y: -0.434}
+  m_SizeDelta: {x: 0.1901, y: 0.07}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &293430255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2157,7 +2307,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &302632295 stripped
 RectTransform:
@@ -2732,7 +2882,7 @@ MonoBehaviour:
   description: golomp pragnie bananow byku
   done: 0
   checks:
-  - {fileID: 676570327}
+  - {fileID: 0}
   - {fileID: 656194971}
 --- !u!1 &405903203
 GameObject:
@@ -3295,7 +3445,7 @@ GameObject:
   - component: {fileID: 487914178}
   - component: {fileID: 487914179}
   - component: {fileID: 487914181}
-  - component: {fileID: 487914183}
+  - component: {fileID: 487914182}
   m_Layer: 3
   m_Name: glomp22
   m_TagString: glomp
@@ -3482,7 +3632,7 @@ MonoBehaviour:
   dialogues:
   - name: golomp
     sentences:
-    - chuj
+    - Nie podbiajaj jak nie masz sprawy.
   dial: {fileID: 394666954}
   dialogIcon: {fileID: 1157754350}
   questIcon: {fileID: 0}
@@ -3490,7 +3640,7 @@ MonoBehaviour:
   qm: {fileID: 1345135636}
   check: {fileID: 0}
   isThereQuest: 0
---- !u!114 &487914183
+--- !u!114 &487914182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3499,17 +3649,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 487914168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de0baac2cc494240b571aea0b2deb0b, type: 3}
+  m_Script: {fileID: 11500000, guid: f041e4a79baa3da42ab8271c266c74a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questIcon: {fileID: 1168006623}
+  quest: {fileID: 244978039}
+  nameOfCheck: "znajd\u017A banany"
+  manager: {fileID: 1345135636}
+  tak0: 0
+  tak1: 0
+  dialogManager: {fileID: 394666953}
+  triger: {fileID: 0}
   dialog:
     name: golomp
     sentences:
-    - przynies banana a sete dostaniesz
-  trigerek: {fileID: 0}
-  quest: {fileID: 401573997}
-  manager: {fileID: 1345135636}
+    - "\u015Awietnie trafi\u0142e\u015B, co prawda ciekawi mnie jak je spienie\u017Cysz..."
+    - "ale w parku mo\u017Cesz znale\u017A\u0107 pare banan\xF3w"
+    - "jak znajdziesz kupca to powiniene\u015B troche przytuli\u0107."
 --- !u!1001 &501668290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4392,9 +4547,9 @@ GameObject:
   - component: {fileID: 676570324}
   - component: {fileID: 676570323}
   - component: {fileID: 676570322}
-  - component: {fileID: 676570326}
   - component: {fileID: 676570325}
   - component: {fileID: 676570327}
+  - component: {fileID: 676570326}
   m_Layer: 2
   m_Name: m ch f 2
   m_TagString: Untagged
@@ -4552,20 +4707,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 676570319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac412859b0fc96488b4ee0b7c591947, type: 3}
+  m_Script: {fileID: 11500000, guid: f041e4a79baa3da42ab8271c266c74a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - name: misio
+  quest: {fileID: 244978039}
+  nameOfCheck: Porozmawiaj z tuptusiem
+  manager: {fileID: 1345135636}
+  tak0: 0
+  tak1: 0
+  dialogManager: {fileID: 394666953}
+  triger: {fileID: 0}
+  dialog:
+    name: tuptus
     sentences:
-    - ohayoooooo
-  dial: {fileID: 394666954}
-  dialogIcon: {fileID: 147628687}
-  questIcon: {fileID: 0}
-  quest: {fileID: 0}
-  qm: {fileID: 1345135636}
-  check: {fileID: 0}
-  isThereQuest: 0
+    - "OO wreszcie na wolce, czuj\u0119, \u017Ce cz\u0119\u015B\u0107 pieni\u0119dzy
+      ju\u017C przepi\u0142es."
+    - "Go\u0142omp powinien zna\u0107 jakis spos\xF3b na zarobek."
 --- !u!114 &676570327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4575,20 +4732,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 676570319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f041e4a79baa3da42ab8271c266c74a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac412859b0fc96488b4ee0b7c591947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 401573997}
-  nameOfCheck: pogadaj z tuptusiem
-  manager: {fileID: 1345135636}
-  tak0: 0
-  tak1: 0
-  dialogManager: {fileID: 394666953}
-  triger: {fileID: 676570326}
-  dialog:
-    name: misio
+  dialogues:
+  - name: tuptus
     sentences:
-    - widze ze gadales z golembiem
+    - "O wr\xF3ci\u0142e\u015B"
+    - "ciesze si\u0119, \u017Ce zn\xF3w mo\u017Cna cie spotka\u0107 na wolce."
+  dial: {fileID: 394666954}
+  dialogIcon: {fileID: 147628687}
+  questIcon: {fileID: 0}
+  quest: {fileID: 0}
+  qm: {fileID: 1345135636}
+  check: {fileID: 0}
+  isThereQuest: 0
 --- !u!1 &680881786
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,7 +6505,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1089196048
 MonoBehaviour:
@@ -7363,7 +7521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2abbe9619ea7d4f90179877174f746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
+  quests:
+  - {fileID: 244978039}
   notesik: {fileID: 269515644}
   questsButton: {fileID: 976435328}
   podpunkt: {fileID: 1766786868}
@@ -7373,6 +7532,7 @@ MonoBehaviour:
   podpunkty: []
   checks: []
   nazwa: {fileID: 296444756}
+  complete: {fileID: 292460942}
 --- !u!4 &1345135637
 Transform:
   m_ObjectHideFlags: 0
@@ -7386,7 +7546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359449123
 GameObject:
@@ -7698,7 +7858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845c728b7ec1e604f894ab39cda9235e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 156228267}
+  player: {fileID: 1608692290}
   reward: {fileID: 0}
   spawnPoint: {fileID: 964390781}
 --- !u!95 &1381985443
@@ -8445,7 +8605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1559689380
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -8504,7 +8664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1570304816
 PrefabInstance:
@@ -8937,6 +9097,7 @@ GameObject:
   - component: {fileID: 1608692293}
   - component: {fileID: 1608692291}
   - component: {fileID: 1608692298}
+  - component: {fileID: 1608692299}
   m_Layer: 3
   m_Name: jasper pixel front 1
   m_TagString: Player
@@ -9086,7 +9247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608692290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.44, y: -2.6, z: 0}
+  m_LocalPosition: {x: 4.93, y: -2.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9115,6 +9276,102 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!82 &1608692299
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608692290}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1623158630
 GameObject:
   m_ObjectHideFlags: 0
@@ -9683,8 +9940,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1708214228}
-  - component: {fileID: 1708214227}
   - component: {fileID: 1708214226}
+  - component: {fileID: 1708214229}
   m_Layer: 0
   m_Name: player&canvas
   m_TagString: Untagged
@@ -9702,8 +9959,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e7986012d0c68141b2407d2dae479a5, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 33c6c002be49a6b49bc43f4be987c005, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9788,19 +10045,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1708214227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708214225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c206d1005b1f140b06e10731a76129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzyczka: {fileID: 1708214226}
 --- !u!4 &1708214228
 Transform:
   m_ObjectHideFlags: 0
@@ -9819,6 +10063,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1708214229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708214225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a343fddd406c4547a64bfbaceb56868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1608692295}
+  muzyczka: {fileID: 1708214226}
+  jasper: {fileID: 1608692299}
+  grassWalk: {fileID: 8300000, guid: 33c6c002be49a6b49bc43f4be987c005, type: 3}
 --- !u!224 &1727636989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9120416940182163858, guid: 878807133c796f149a4f31cb3f1a9f19, type: 3}
@@ -9918,6 +10178,7 @@ Transform:
   - {fileID: 487914171}
   - {fileID: 676570320}
   - {fileID: 1825981695}
+  - {fileID: 244978038}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

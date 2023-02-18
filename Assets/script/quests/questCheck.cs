@@ -9,6 +9,8 @@ public abstract class questCheck : MonoBehaviour
     public QuestManager manager;
     public bool tak0 = false;
     public bool tak1 = false;
+    public int ilosc = 0;
+    public int max = 0;
 
     private bool isActive = false;
     public bool IsActive

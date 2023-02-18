@@ -5,7 +5,7 @@ using UnityEngine;
 public class questTypuGadaj : questCheck
 {
     public GameObject dialogManager;
-    public DialogueTrigger triger;
+    [HideInInspector] public DialogueTrigger triger;
     public Dialogue dialog;
 
 
@@ -28,9 +28,12 @@ public class questTypuGadaj : questCheck
         Debug.Log(quest.checks.Count);
         Debug.Log(quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()));
 
-        if (quest.checks.Count-1> quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
+        if (quest.checks.Count - 1 > quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()))
         {
-            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())+1].IsActive = true;
+            quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>()) + 1].IsActive = true;
+        }
+        else {
+            quest.done = true;
         }
     }
 }

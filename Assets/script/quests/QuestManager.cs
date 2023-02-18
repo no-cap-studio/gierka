@@ -22,7 +22,7 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI[] podpunkty;
     public SpriteRenderer[] checks;
     public TextMeshProUGUI nazwa;
-
+    public GameObject complete;
     void Start()
     {
         checks = check.GetComponentsInChildren<SpriteRenderer>();
@@ -56,6 +56,7 @@ public class QuestManager : MonoBehaviour
         quests.Add(q);
         questsButtons[quests.IndexOf(q)].GetComponentInChildren<TextMeshProUGUI>().text = q.name;
         karteczki[quests.IndexOf(q)].SetActive(true);
+       
 
     }
 
@@ -74,6 +75,13 @@ public class QuestManager : MonoBehaviour
 
     public void openQuestBook()
     {
+        foreach (Quest q in quests)
+        {
+            if (q.checks[0].IsActive == false)
+            {
+                q.checks[0].IsActive = true;
+            }
+        }
         notesik.SetActive(!notesik.activeSelf);
         if (notesik.activeSelf)
         {
@@ -113,7 +121,16 @@ public class QuestManager : MonoBehaviour
                 
                 i++;
             }
-        }  
+            if (quests[0].done == true)
+            {
+                complete.SetActive(true);
+            }
+            else
+            {
+                complete.SetActive(false);
+            }
+        }
+        
     }
 
     public void changeQuest()
@@ -155,9 +172,30 @@ public class QuestManager : MonoBehaviour
                 checks[j].gameObject.SetActive(false);
             }
         }
-
+        if (quests[questsButtons.IndexOf(EventSystem.current.currentSelectedGameObject.GetComponent<Button>())].done == true)
+        {
+            complete.SetActive(true);
+        }
+        else
+        { 
+            complete.SetActive(false) ;
+        }
 
     }
 
+
+    private void bananaQuestCheck()
+    {
+        foreach (Quest q in quests)
+        {
+            foreach (questCheck qc in q.checks)
+            {
+                if (qc.name == "podnieœ banany")
+                { 
+                    
+                }
+            }
+        }
+    }
 
 }

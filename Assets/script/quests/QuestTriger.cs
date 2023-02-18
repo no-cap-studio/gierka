@@ -6,7 +6,7 @@ public class QuestTriger : MonoBehaviour
 {
     public GameObject questIcon;
     public Dialogue dialog;
-    public DialogueTrigger trigerek;
+    [HideInInspector]public DialogueTrigger trigerek;
     public Quest quest;
     public QuestManager manager;
     void Start()

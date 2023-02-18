@@ -20,6 +20,10 @@ public class questTypuPodnies : questCheck
         {
             quest.checks[quest.checks.IndexOf(this.gameObject.GetComponent<questCheck>())+1].IsActive = true;
         }
+                else
+        {
+            quest.done = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
