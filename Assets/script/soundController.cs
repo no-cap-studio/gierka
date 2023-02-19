@@ -29,7 +29,6 @@ public class soundController : MonoBehaviour
         }
         if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
-            Debug.Log("chuj");
             StopAllCoroutines();
             isPlaying = false;
         }

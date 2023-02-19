@@ -130,7 +130,7 @@ public class RayCast : MonoBehaviour
         public bool inFov(Transform checkingObject, Transform target, float maxAngle, float maxRadius)
         {
             int count = Physics2D.OverlapCircleNonAlloc(checkingObject.parent.position, maxRadius, overlaps);
-            for (int i = 0; i < count + 1; i++)
+            for (int i = 0; i < count ; i++)
             {
                 if (overlaps[i] != null)
                 {

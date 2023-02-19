@@ -14,6 +14,7 @@ public class SpriteMaskController : MonoBehaviour
     private Collider2D spriteMaskCollider;
 
     //List of objects that we are colliding with
+    [SerializeField]
     private List<SpriteRenderer> otherRendereres = new List<SpriteRenderer>();
 
     public bool checking = false;
@@ -39,12 +40,14 @@ public class SpriteMaskController : MonoBehaviour
                     && playerSpriteRenderer.transform.position.y > renderer.transform.position.y) 
                 {
                     //if yes enable the sprite mask
+                    renderer.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
                     spriteMask.enabled = true;
                     playerSpriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
                     return;
                 }
                 else
                 {
+                    renderer.maskInteraction = SpriteMaskInteraction.None;
                     //else disable the sprite mask
                     spriteMask.enabled = false;
                     playerSpriteRenderer.maskInteraction = SpriteMaskInteraction.None;
