@@ -8,6 +8,11 @@ TagManager:
   - enemy
   - glomp
   - sideQuestIteam
+  - dest
+  - resp
+  - obst
+  - auto
+  - map
   layers:
   - Default
   - TransparentFX

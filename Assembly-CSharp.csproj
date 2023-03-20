@@ -74,6 +74,7 @@
     <Compile Include="Assets\script\hiding.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\script\auta\carControler.cs" />
     <Compile Include="Assets\script\stareSkrypty\dialogi.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\script\quests\questChcecks\podniesBanany.cs" />
@@ -92,9 +93,11 @@
     <Compile Include="Assets\script\enemyAnimationCotrol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\script\quests\QuestManager.cs" />
+    <Compile Include="Assets\script\auta\obstacleControler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\script\quests\questChcecks\stringiPodnies.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\script\auta\spawnActivator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\script\playerMovement.cs" />
     <Compile Include="Assets\script\start.cs" />
@@ -103,8 +106,10 @@
     <Compile Include="Assets\script\SpriteMaskController.cs" />
     <Compile Include="Assets\script\cameraBevour.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\script\auta\destinationController.cs" />
     <Compile Include="Assets\script\dialog\dialogManager.cs" />
     <Compile Include="Assets\script\przeszukiwanieKoszy.cs" />
+    <Compile Include="Assets\script\auta\spawnControler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
