@@ -55,6 +55,7 @@ public class carControler : MonoBehaviour
             if (hit.collider.gameObject.CompareTag(obstacle.tag))
             {
                 Debug.Log("obstacel");
+                
 
                 if (!obstacleControler.isActive)
                 {
