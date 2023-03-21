@@ -45,11 +45,11 @@ public class carControler : MonoBehaviour
     }
     private void checkForCollision()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, rayLength);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection, rayLength);
         if (hit)
         {
 
-            if (hit.collider.gameObject.tag == this.gameObject.tag)
+            if (hit.collider.gameObject.tag == gameObject.tag)
                 canMove = false;
 
             if (hit.collider.gameObject.CompareTag(obstacle.tag))

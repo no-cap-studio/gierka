@@ -62,6 +62,7 @@
     <Compile Include="Assets\script\quests\questCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\script\setMask.cs" />
+    <Compile Include="Assets\script\smiercAutowa.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\script\dialog\Dialogue.cs" />
     <Compile Include="Assets\script\quests\QuestTriger.cs" />
