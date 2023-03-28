@@ -112,12 +112,13 @@ public class playerMovement : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        
-        if(collision.gameObject.CompareTag("enemy") && CompareTag("Player"))
+        Debug.Log(collision.gameObject.tag);
+        if(collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("auto"))
         {
             manager.EndGame();
         }
         
+
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

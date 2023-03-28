@@ -20,7 +20,7 @@ public class spawnControler : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(2.0f, frequency));
         if (isActive)
         {
-            GameObject clone=Instantiate(sprite, this.gameObject.transform.position, Quaternion.identity);
+            GameObject clone=Instantiate(sprite, this.gameObject.transform.position, Quaternion.identity, this.gameObject.transform);
             /*clone.GetComponent<carControler>().sprite = sprite;
             clone.GetComponent<carControler>().obstacle = obstacle;
             clone.GetComponent<carControler>().destination = destination;*/

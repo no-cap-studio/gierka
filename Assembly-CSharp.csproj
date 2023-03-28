@@ -103,6 +103,7 @@
     <Compile Include="Assets\script\playerMovement.cs" />
     <Compile Include="Assets\script\start.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\script\gameManaging\dedEscControler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\script\SpriteMaskController.cs" />
     <Compile Include="Assets\script\cameraBevour.cs" />

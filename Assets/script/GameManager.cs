@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         deadScreen.SetActive(false);
         qm = FindObjectOfType<QuestManager>();
+        Time.timeScale= 1.0f;
     }
 
     
@@ -34,6 +36,10 @@ public class GameManager : MonoBehaviour
         qm.bananaQuestCheck();
         
     }
-
-     
+    public void resetTheGame()
+    {
+        //Application.Quit();
+        //deadScreen.SetActive(false);
+        SceneManager.LoadScene(1);
+    }
 }

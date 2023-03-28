@@ -44,20 +44,20 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (isThereQuest == false)
             {
                 dialogIcon.SetActive(true);
             }
-
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
+            
         }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
 
             dialogIcon.SetActive(false);

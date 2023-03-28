@@ -5,13 +5,16 @@ using UnityEngine;
 public class obstacleControler : MonoBehaviour
 {
     public bool isActive;
+    public int waitFor;
     private void Start()
     {
+        if (waitFor == 0)
+            waitFor = 6;
         StartCoroutine(change());
     }
     private IEnumerator change()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(waitFor);
         if(isActive) isActive= false;
         else isActive=true;
         StartCoroutine(change());

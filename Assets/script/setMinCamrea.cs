@@ -31,7 +31,7 @@ public class setMinCamrea : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             minCamera.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
         }
     }
 }
