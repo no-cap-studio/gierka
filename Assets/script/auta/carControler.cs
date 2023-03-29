@@ -62,7 +62,7 @@ public class carControler : MonoBehaviour
                 gameManager.EndGame();
             }
 
-            if (hit.collider.gameObject.tag == this.gameObject.tag)
+            if (hit.collider.gameObject.CompareTag(this.gameObject.tag))
             {
                 canMove = false;
                 StartCoroutine(ifStoppedForTooLong());

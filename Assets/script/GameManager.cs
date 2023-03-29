@@ -41,5 +41,7 @@ public class GameManager : MonoBehaviour
         //Application.Quit();
         //deadScreen.SetActive(false);
         SceneManager.LoadScene(1);
+        //SceneManager.UnloadSceneAsync(1);
+        //SceneManager.LoadSceneAsync(1);
     }
 }

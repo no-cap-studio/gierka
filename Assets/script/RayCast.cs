@@ -9,7 +9,7 @@ using UnityEngine;
 public class RayCast : MonoBehaviour
 {
     public float speed;
-    float step;
+    //float step;
     Vector2 pozgracza;
     Vector2 pozgraczaray;
     public GameObject gracz;
@@ -43,7 +43,7 @@ public class RayCast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        step = speed * Time.deltaTime;
+        // step = speed * Time.deltaTime;
        
 
     }
@@ -55,7 +55,7 @@ public class RayCast : MonoBehaviour
         if (isInFov != true)
         {
             cel = sciezka[liczba];
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, cel, step * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, cel, speed * Time.deltaTime);
             if (transform.parent.position == sciezka[liczba])
             {
                 if (liczba == sciezka.Length-1)
@@ -92,7 +92,7 @@ public class RayCast : MonoBehaviour
         void podonzaj()
         {
             cel = pozgracza;
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, step * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, pozgracza, speed * Time.deltaTime);
             followStozek();
             
 
@@ -201,7 +201,7 @@ public class RayCast : MonoBehaviour
     {
         if (isInFov != true)
         {
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], step * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, sciezka[liczba], speed * Time.deltaTime);
             if (transform.parent.position == sciezka[liczba])
             {
                 if(liczba == 3)
