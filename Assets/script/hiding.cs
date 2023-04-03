@@ -151,17 +151,21 @@ public class hiding : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        move.hideMet = this.gameObject.GetComponent<hiding>();
-        if (move.isHiding == false)
-        {
-            hideIcon.gameObject.SetActive(true);
+        if (collision.gameObject.CompareTag("Player")){
+            move.hideMet = this.gameObject.GetComponent<hiding>();
+            if (move.isHiding == false)
+            {
+                hideIcon.gameObject.SetActive(true);
+            }
         }
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        move.hideMet = null;
-        hideIcon.gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("Player")){
+            move.hideMet = null;
+            hideIcon.gameObject.SetActive(false);
+        }
     }
 }

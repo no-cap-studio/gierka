@@ -46,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (isThereQuest == false)
+            if (isThereQuest == false && quest ==null)
             {
                 dialogIcon.SetActive(true);
             }
