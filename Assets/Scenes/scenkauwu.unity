@@ -3185,7 +3185,7 @@ Transform:
   - {fileID: 1925984254}
   - {fileID: 384728684}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &92010049
 MonoBehaviour:
@@ -8158,7 +8158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &302632295 stripped
 RectTransform:
@@ -10224,7 +10224,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &398060009
 PrefabInstance:
@@ -27317,7 +27317,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1089196048
 MonoBehaviour:
@@ -28463,6 +28463,7 @@ GameObject:
   - component: {fileID: 1130256028}
   - component: {fileID: 1130256030}
   - component: {fileID: 1130256029}
+  - component: {fileID: 1130256031}
   m_Layer: 0
   m_Name: bobWudowniczy
   m_TagString: Untagged
@@ -28610,6 +28611,26 @@ MonoBehaviour:
   qm: {fileID: 1345135636}
   check: []
   isThereQuest: 0
+--- !u!95 &1130256031
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130256025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0225988cdee08f143a2f0a1b3e004a69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1131652351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32934,7 +32955,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1348734660
 PrefabInstance:
@@ -42245,7 +42266,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1739750927
 MonoBehaviour:
@@ -42587,7 +42608,7 @@ Transform:
   - {fileID: 10190775}
   - {fileID: 1085732864}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1753776634
 PrefabInstance:
@@ -56632,7 +56653,7 @@ Transform:
   - {fileID: 7014208741719352116}
   - {fileID: 2705882939576607959}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5430299973004687963
 PrefabInstance:
