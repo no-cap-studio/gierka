@@ -39,9 +39,15 @@ GraphicsSettings:
   - {fileID: 10783, guid: 0000000000000000f000000000000000, type: 0}
   m_PreloadedShaders: []
   m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+<<<<<<< Updated upstream
   m_CustomRenderPipeline: {fileID: 0}
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 0, z: 1}
+=======
+  m_CustomRenderPipeline: {fileID: 11400000, guid: cf8c29d244c466149b848888ca631471, type: 2}
+  m_TransparencySortMode: 3
+  m_TransparencySortAxis: {x: 0, y: 3, z: 0}
+>>>>>>> Stashed changes
   m_DefaultRenderingPath: 1
   m_DefaultMobileRenderingPath: 1
   m_TierSettings: []
@@ -59,6 +65,11 @@ GraphicsSettings:
   m_FogKeepExp2: 1
   m_AlbedoSwatchInfos: []
   m_LightsUseLinearIntensity: 0
-  m_LightsUseColorTemperature: 0
+  m_LightsUseColorTemperature: 1
   m_DefaultRenderingLayerMask: 1
   m_LogWhenShaderIsCompiled: 0
+<<<<<<< Updated upstream
+=======
+  m_SRPDefaultSettings:
+    UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 98d7fdc21c14d2f4d9c52056c3c2d2a4, type: 2}
+>>>>>>> Stashed changes
