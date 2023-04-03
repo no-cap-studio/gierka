@@ -9,6 +9,9 @@ public class ekwipunek : MonoBehaviour
     public TextMeshProUGUI tekst;
     public GameObject[] kratki;
     public GameObject UiInwentarz;
+    public GameObject Ramka;
+    public GameObject Minimapa;
+    public GameObject Czerwony_kwadrat;
     kratka[] inwentarz = new kratka[8];
     private bool inwentarzOtworzony;
     public struct kratka
@@ -17,6 +20,7 @@ public class ekwipunek : MonoBehaviour
         public int amount;
         public bool InPossesion;
         public bool Blocked;
+        public string nazwa;
 
     }
     public void Setter(int id)
@@ -24,6 +28,15 @@ public class ekwipunek : MonoBehaviour
         
         inwentarz[id].amount += 1;
         aktualizacja();
+    }
+    public bool oddaj(int id,int ilosc)
+    {
+        if (inwentarz[id].amount < ilosc)
+        {
+            return false;
+        }
+        inwentarz[id].amount -= ilosc;
+        return true;
     }
     public void aktualizacja()
     {
@@ -49,6 +62,9 @@ public class ekwipunek : MonoBehaviour
     }
     public void Pokazlubschowaj()
     {
+        Czerwony_kwadrat.SetActive(!Czerwony_kwadrat.activeSelf);
+        Ramka.SetActive(!Ramka.activeSelf);
+        Minimapa.SetActive(!Minimapa.activeSelf);
         UiInwentarz.SetActive(!UiInwentarz.activeSelf);
       for(int i = 0;i< kratki.Length;i++)
         {
