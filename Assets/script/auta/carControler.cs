@@ -36,9 +36,10 @@ public class carControler : MonoBehaviour
         if (canMove)
         {
             this.gameObject.transform.Translate(velocityX * Time.deltaTime, velocityY * Time.deltaTime, 0);
-            //this.gameObject.GetComponent<Animator>().enabled = true;
+            this.gameObject.GetComponent<Animator>().enabled = true;
         }
-        // this.gameObject.GetComponent<Animator>().enabled = false;
+        else
+            this.gameObject.GetComponent<Animator>().enabled = false;
     }
     private IEnumerator waitForGreen()
     {
@@ -51,16 +52,23 @@ public class carControler : MonoBehaviour
         if (!canMove)
             Destroy(this.gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameManager.EndGame();
+        }
+    }
     private void checkForCollision()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection, rayLength);
         Debug.DrawRay(transform.position, rayDirection * rayLength, Color.red);
         if (hit)
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                gameManager.EndGame();
-            }
+            //if (hit.collider.gameObject.CompareTag("Player"))
+            //{
+              //  gameManager.EndGame();
+            //}
 
             if (hit.collider.gameObject.CompareTag(this.gameObject.tag))
             {
