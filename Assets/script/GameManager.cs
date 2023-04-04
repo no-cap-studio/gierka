@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class GameManager : MonoBehaviour
         points++;
         pointSpace.text = points.ToString();
         qm.bananaQuestCheck();
-        
     }
     public void resetTheGame()
     {

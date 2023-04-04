@@ -6787,6 +6787,7 @@ GameObject:
   - component: {fileID: 244978039}
   - component: {fileID: 244978040}
   - component: {fileID: 244978041}
+  - component: {fileID: 244978043}
   m_Layer: 0
   m_Name: bonzo1
   m_TagString: Untagged
@@ -6962,7 +6963,8 @@ MonoBehaviour:
   dialogues:
   - name: Bonzo
     sentences:
-    - Masz juz jakies banany?
+    - Jest nowy towar w miescie - banany.
+    - Im wiecej info znajdziesz tym lepiej.
   dial: {fileID: 394666954}
   dialogIcon: {fileID: 1629333614}
   questIcon: {fileID: 0}
@@ -6970,6 +6972,33 @@ MonoBehaviour:
   qm: {fileID: 1345135636}
   check: []
   isThereQuest: 0
+--- !u!114 &244978043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244978035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f041e4a79baa3da42ab8271c266c74a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 467624289}
+  nameOfCheck: Bonzo
+  manager: {fileID: 1345135636}
+  tak0: 0
+  tak1: 0
+  ilosc: 0
+  max: 0
+  dialogManager: {fileID: 394666953}
+  triger: {fileID: 0}
+  dialog:
+    name: Bonzo
+    sentences:
+    - Pytasz skad policja? Ostatnio zmienil sie komendant.
+    - Wiec moje wtyki nie sa juz tak silne i robia co chca.
+    - Wszystkich trzepia rowno, wiec nie daj sie zlapac.
 --- !u!4 &244994569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2159386038182895690, guid: 1bb31facd26593942bb91dceb9eb11c4, type: 3}
@@ -13150,7 +13179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467624280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de0baac2cc494240b571aea0b2deb0b, type: 3}
   m_Name: 
@@ -13161,9 +13190,7 @@ MonoBehaviour:
     sentences:
     - Siema stary! Dobrze cie widziec juz na wolce.
     - Jak sie trzymasz? Slyszalem, ze znow robisz dla Bonza.
-    - Uwazaj na siebie.
-    - Ostatnio policja zrobila najazd na park i ciezko jest o towar.
-    - Przetrzepuja kazdego kogo znajda. Lepiej ich unikaj.
+    - Uwazaj na siebie. Niech ci szefu powie, skad policja sie wziela.
     - Jakbys byl u szefa to przekaz, ze mam info o bananach.
   trigerek: {fileID: 0}
   quest: {fileID: 467624289}
@@ -13175,16 +13202,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467624280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe353d1455ecd1a469786fe1af5f3544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfQuest: Uwazaj na siebie
+  nameOfQuest: Pogadaj ze wszystkimi
   description: 
   done: 0
   checks:
-  - {fileID: 0}
+  - {fileID: 244978043}
 --- !u!1001 &469502987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23862,7 +23889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &882019568
 Transform:
   m_ObjectHideFlags: 0
@@ -24003,7 +24030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e23119c76148548b56c18eeb480fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutscenka: {fileID: 1559689379}
 --- !u!1001 &883196549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25811,11 +25837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877525277365784032, guid: 7ad6daefa87b93e419a9d85b625763ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.51931
+      value: 2.431
       objectReference: {fileID: 0}
     - target: {fileID: 3877525277365784032, guid: 7ad6daefa87b93e419a9d85b625763ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6307278
+      value: 3.528
       objectReference: {fileID: 0}
     - target: {fileID: 3877525277365784032, guid: 7ad6daefa87b93e419a9d85b625763ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34668,7 +34694,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 32769
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -38524,13 +38550,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1559689381}
   - component: {fileID: 1559689380}
+  - component: {fileID: 1559689382}
   m_Layer: 0
   m_Name: cutscenkaPlayable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1559689380
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -38595,6 +38622,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559689382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559689379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2853e9f8c9568f846bb19eae3c74f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1563106598
 GameObject:
   m_ObjectHideFlags: 0
@@ -43046,7 +43085,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708214225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -43147,6 +43186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454211632}
     m_Modifications:
+    - target: {fileID: 2407970106081600039, guid: 3d1c4bdb8fd46004199b8bffb04b9996, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 2440227068621867629, guid: 3d1c4bdb8fd46004199b8bffb04b9996, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -50260,6 +50303,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454211632}
     m_Modifications:
+    - target: {fileID: 2407970106081600039, guid: 3d1c4bdb8fd46004199b8bffb04b9996, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 2440227068621867629, guid: 3d1c4bdb8fd46004199b8bffb04b9996, type: 3}
       propertyPath: m_SortingOrder
       value: 3
