@@ -44,13 +44,14 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Tutorial"))
         {
-            if (isThereQuest == false && quest ==null)
-            {
-                dialogIcon.SetActive(true);
-            }
-            collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
+           
+                if (isThereQuest == false && quest == null)
+                {
+                    dialogIcon.SetActive(true);
+                }
+                collision.gameObject.GetComponent<playerMovement>().dialogTriger = this.gameObject;
             
         }
 
@@ -59,7 +60,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
             dialogIcon.SetActive(false);
             collision.gameObject.GetComponent<playerMovement>().dialogTriger = null;
             dial.GetComponent<dialogManager>().endDialogue();

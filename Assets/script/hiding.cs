@@ -151,7 +151,8 @@ public class hiding : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")){
+        if (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Tutorial"))
+        {
             move.hideMet = this.gameObject.GetComponent<hiding>();
             if (move.isHiding == false)
             {
@@ -163,7 +164,7 @@ public class hiding : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")){
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Tutorial")){
             move.hideMet = null;
             hideIcon.gameObject.SetActive(false);
         }

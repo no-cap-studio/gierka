@@ -34,6 +34,7 @@ public class dialogManager : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue)
     {
+
         nameText.text = dialogue.name;
         sentences.Clear();
         textSpace.SetActive(true);

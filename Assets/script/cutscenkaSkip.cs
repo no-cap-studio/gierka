@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class cutscenkaSkip : MonoBehaviour
 {
     //public PlayableDirector cutscenka;
-    private double skipTime = 1524.0f;
+    public double skipTime = 1524.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,10 @@ public class cutscenkaSkip : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             this.GetComponent<PlayableDirector>().time = skipTime;
+        }
+        if(Time.time > skipTime)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 }

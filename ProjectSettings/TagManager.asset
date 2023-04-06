@@ -13,6 +13,7 @@ TagManager:
   - obst
   - auto
   - map
+  - Tutorial
   layers:
   - Default
   - TransparentFX
