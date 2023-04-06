@@ -8218,6 +8218,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5355360709728517410, guid: a277f396974334e49a0b6784f689485f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355360709728517410, guid: a277f396974334e49a0b6784f689485f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.876
+      objectReference: {fileID: 0}
     - target: {fileID: 5839755607391540210, guid: a277f396974334e49a0b6784f689485f, type: 3}
       propertyPath: m_Name
       value: hideAble (1)
@@ -12972,7 +12980,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464846460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -18779,7 +18787,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba15196cb188a0c48bf054d130acc2c6, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2789617813343262583, guid: ba15196cb188a0c48bf054d130acc2c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23965,13 +23973,20 @@ MonoBehaviour:
     - Wow! Superancko! Przelaczyles sie na kolejny dialog.
     - Klikajac E mozesz wchodzic w interakcje dialogowe z postaciami.
     - "Podpowiadaj\u0105 ci o tym rozne ikonki wyswietlajace sie nad obiektami."
-    - Na przyklad jak podejdziesz do kosza, to wyswietli sie F.
-    - 'Mozesz sie w nim schowac!
-
-      Teraz w koszu kliknij w, a, s, d.'
-    - Tak! Mozesz wybrac, z ktorej strony chcesz wyjsc.
+    - Na przyklad mozesz sie schowac w koszu.
+    - Informuje cie o tym ikonka F, ktora wyswietla sie gdy podejdziesz.
+    - Kiedy wejdziesz do kosza, mozesz kliknac w, a, s, d.
+    - Mozesz wybrac w ten sposob, z ktorej strony chcesz wyjsc!
+    - Podejdz teraz do kosza i przetestuj!
     - Fajne, co?
     - Uwazaj na przeciwnikow i auta - one moga cie zabic :(.
+    - Policjanci maja czerwone stozki. Jesli w nie wejdziesz, zauwaza cie!
+    - Aby uciec, wystarczy ze schowasz sie za czyms...
+    - ..lub schowasz sie w koszu.
+    - Auta nie zatrzymuja sie na wszystkich pasach...
+    - ...i zachowuja sie dosc nieprzewidywalnie.
+    - W koncu jestesmy w Lodzi...
+    - A kierowcy nie cierpia, jak sie dotyka ich cudowne maszyny.
     - Nacisnij esc, aby zakonczyc tutorial. Zycze milej gry!
   dial: {fileID: 394666954}
   dialogIcon: {fileID: 882019567}
@@ -33647,7 +33662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326728288}
   - component: {fileID: 1326728289}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: wprowadzenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35780,7 +35795,7 @@ Animator:
   m_GameObject: {fileID: 1411987030}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a46d3826f01aaf42b7cad7d9889a62b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
