@@ -29,7 +29,13 @@ public class hiding : MonoBehaviour
         sprite.sprite = hidden;
         player.GetComponent<SpriteRenderer>().enabled = false;
         move.isHiding = true;
-        player.tag  = "Untagged";
+        if (player.CompareTag("Tutorial"))
+        {
+            player.tag = "TutorialHiding";
+        }
+        else { 
+            player.tag = "Untagged"; 
+        }
         hideIcon.gameObject.SetActive(false);
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic; 
 
@@ -45,7 +51,14 @@ public class hiding : MonoBehaviour
             }
 
             player.GetComponent<SpriteRenderer>().enabled = true;
-            player.tag = "Player";
+            if (player.CompareTag("TutorialHiding"))
+            {
+                player.tag = "Tutorial";
+            }
+            else
+            {
+                player.tag = "Player";
+            }
             sprite.sprite = unHidden;
             move.isHiding = false;
             hideIcon.gameObject.SetActive(true);

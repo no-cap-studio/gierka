@@ -25,10 +25,14 @@ public class przeszukiwanieKoszy : MonoBehaviour
     public void startLooking() {
         Debug.Log("nie wiem kurwa");
         player.GetComponent<SpriteRenderer>().enabled = false;
-        player.tag = "Untagged";
+        if (!player.CompareTag("Tutorial"))
+        {
+            player.tag = "Untagged";
+        }
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         anim.Play("kosz",0,60);
         StartCoroutine(finish());
+        move.ruch = false;
 
     }
 
@@ -39,8 +43,12 @@ public class przeszukiwanieKoszy : MonoBehaviour
             reward.transform.position = spawnPoint.transform.position;
         }
         player.GetComponent<SpriteRenderer>().enabled = true;
-        player.tag = "Player";
+        if (!player.CompareTag("Tutorial"))
+        {
+            player.tag = "Player";
+        }
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        move.ruch = true;
     }
 
     private IEnumerator finish()

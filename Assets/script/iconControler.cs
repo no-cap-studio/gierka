@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class iconControler : MonoBehaviour
 {
-    public GameObject golompIcon;
-    public GameObject misioIcon;
-    public GameObject jasperIcon;
+    //public GameObject golompIcon;
+    //public GameObject misioIcon;
+    //public GameObject jasperIcon;
+    public List<GameObject> ikonki;
     void Start()
     {
-        golompIcon.SetActive(true);
-        misioIcon.SetActive(true);
-        jasperIcon.SetActive(true);
+        foreach (GameObject obj in ikonki)
+        {
+            obj.SetActive(true);
+        }
     }
 
     
