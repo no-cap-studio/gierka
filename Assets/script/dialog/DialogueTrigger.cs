@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -13,6 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     public QuestManager qm;
     public List<questCheck> check;
     public bool isThereQuest=false;
+    
 
     public void Start()
     {
@@ -24,6 +26,7 @@ public class DialogueTrigger : MonoBehaviour
         if (isThereQuest == false)
         {
             dial.startDialogue(dialogues[0]);
+            
         }
         else {
             if (quest != null)

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI pointSpace;
     public GameObject deadScreen;
     public QuestManager qm;
+    
     void Start()
     {
         deadScreen.SetActive(false);
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndGame()
     {
+        
         points = 0;
         pointSpace.text = points.ToString();
         deadScreen.SetActive(true);

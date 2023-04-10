@@ -5,7 +5,7 @@ using UnityEngine;
 public class obstacleControler : MonoBehaviour
 {
     public bool isActive;
-    public int waitFor;
+    public float waitFor;
     private void Start()
     {
         if (waitFor == 0)
