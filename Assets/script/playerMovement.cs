@@ -113,11 +113,20 @@ public class playerMovement : MonoBehaviour
     public void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if(collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("auto"))
+        if(collision.gameObject.CompareTag("auto"))
+        {
+            if (collision.gameObject.GetComponent<carControler>().canMove)
+            {
+                //Debug.Log("canmove: ");
+                //Debug.Log(collision.gameObject.GetComponent<carControler>().canMove);
+                manager.EndGame();
+            }
+           
+        }
+        if (collision.gameObject.CompareTag("enemy"))
         {
             manager.EndGame();
         }
-        
 
     }
     public void OnTriggerEnter2D(Collider2D collision)

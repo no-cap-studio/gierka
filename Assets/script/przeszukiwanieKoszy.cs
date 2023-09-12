@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+//using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class przeszukiwanieKoszy : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class przeszukiwanieKoszy : MonoBehaviour
     {
     }
     public void startLooking() {
+        gameObject.GetComponent<Animator>().enabled = true;
         Debug.Log("nie wiem kurwa");
         player.GetComponent<SpriteRenderer>().enabled = false;
         if (!player.CompareTag("Tutorial"))
@@ -38,6 +39,8 @@ public class przeszukiwanieKoszy : MonoBehaviour
 
     public void stopLooking()
     {
+        gameObject.GetComponent<Animator>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<hiding>().unHidden;
         if (reward != null)
         {
             reward.transform.position = spawnPoint.transform.position;

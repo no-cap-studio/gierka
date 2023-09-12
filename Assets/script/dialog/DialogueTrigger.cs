@@ -14,19 +14,17 @@ public class DialogueTrigger : MonoBehaviour
     public QuestManager qm;
     public List<questCheck> check;
     public bool isThereQuest=false;
-    
 
     public void Start()
     {
         
-
     }
     public void triggerDialogue()
     {
+        
         if (isThereQuest == false)
         {
-            dial.startDialogue(dialogues[0]);
-            
+            dial.startDialogue(dialogues[0]);   
         }
         else {
             if (quest != null)

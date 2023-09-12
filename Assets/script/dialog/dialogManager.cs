@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using TMPro;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +22,6 @@ public class dialogManager : MonoBehaviour
     public Quest quest;
     public DialogueTrigger dialogueTrigger;
     public questCheck check;
-    public Camera cam;
     void Start()
     {
         sentences = new Queue<string>();
@@ -35,7 +34,6 @@ public class dialogManager : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue)
     {
-        cam.orthographicSize = 1.0f;
         nameText.text = dialogue.name;
         sentences.Clear();
         textSpace.SetActive(true);
@@ -79,7 +77,6 @@ public class dialogManager : MonoBehaviour
         nameSpace.SetActive(false);
         dialogueBackGround.SetActive(false);
         player.GetComponent<playerMovement>().isTalking = false;
-        cam.orthographicSize = 2.0f;
         if (quest != null)
         {
             addQuest(quest);

@@ -11,7 +11,7 @@ public class carControler : MonoBehaviour
     public GameObject destination;
     public GameObject resp;
     private spawnControler spawn;
-    private bool canMove;
+    public bool canMove;
     Ray2D ray;
     public float rayLength;
     public Vector2 rayDirection;
@@ -52,13 +52,13 @@ public class carControler : MonoBehaviour
         if (!canMove)
             Destroy(this.gameObject);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            gameManager.EndGame();
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+      //  if (collision.gameObject.CompareTag("Player"))
+        //{
+          //  gameManager.EndGame();
+        //}
+    //}
     private void checkForCollision()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection, rayLength);

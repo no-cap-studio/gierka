@@ -6,7 +6,6 @@ public class swiatla : MonoBehaviour
 {
     public Sprite czerwoneSprite;
     public Sprite zieloneSprite;
-    //private obstacleControler obstacle;
     public float ileMaMigac;
     public AnimationClip czerwone;
     public AnimationClip zielone;
@@ -30,7 +29,6 @@ public class swiatla : MonoBehaviour
         czas -= ileMaMigac;
         if(GetComponentInParent<obstacleControler>().isActive)
         {
-            
             this.GetComponent<SpriteRenderer>().sprite = czerwoneSprite;
             Debug.Log(this.GetComponent<SpriteRenderer>().sprite);
         }
@@ -42,31 +40,30 @@ public class swiatla : MonoBehaviour
         StartCoroutine(change());
     }
 
-    // Update is called once per frame
    
         private IEnumerator change()
         {
             if (this.GetComponent<SpriteRenderer>().sprite == czerwoneSprite)
-        {
-            //Debug.Log("czerwone triger");
-            yield return new WaitForSeconds(czas);
-            this.GetComponent<Animator>().enabled = true;
-            this.GetComponent<Animator>().Play(czerwone.name);
-            yield return new WaitForSeconds(ileMaMigac);
-            this.GetComponent<Animator>().enabled = false;
-            this.GetComponent<SpriteRenderer>().sprite = zieloneSprite;
-            Debug.Log(this.GetComponent<SpriteRenderer>().sprite);
-        }
-        else
-        {
-            //Debug.Log("zielone triger");
-            yield return new WaitForSeconds(czas);
-            this.GetComponent<Animator>().enabled = true;
-            this.GetComponent<Animator>().Play(zielone.name);
-            yield return new WaitForSeconds(ileMaMigac);
-            this.GetComponent<Animator>().enabled = false;
-            this.GetComponent<SpriteRenderer>().sprite = czerwoneSprite;
-        }
+            {
+                //Debug.Log("czerwone triger");
+                yield return new WaitForSeconds(czas);
+                this.GetComponent<Animator>().enabled = true;
+                this.GetComponent<Animator>().Play(czerwone.name);
+                yield return new WaitForSeconds(ileMaMigac);
+                this.GetComponent<Animator>().enabled = false;
+                this.GetComponent<SpriteRenderer>().sprite = zieloneSprite;
+                Debug.Log(this.GetComponent<SpriteRenderer>().sprite);
+            }
+            else
+            {
+                //Debug.Log("zielone triger");
+                yield return new WaitForSeconds(czas);
+                this.GetComponent<Animator>().enabled = true;
+                this.GetComponent<Animator>().Play(zielone.name);
+                yield return new WaitForSeconds(ileMaMigac);
+                this.GetComponent<Animator>().enabled = false;
+                this.GetComponent<SpriteRenderer>().sprite = czerwoneSprite;
+            }
             StartCoroutine(change());
         }
 }
